@@ -1,36 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Xancar Auto Center - Sua oficina mecânica de confiança em Louveira. Mecânica geral, freios, suspensão, pneus, alinhamento e balanceamento com preço justo e honestidade.">
-  <title>Xancar Auto Center | Manutenção Automotiva de Confiança</title>
+  <meta name="description" content="Xancar Auto Center - Centro Automotivo Premium. Diagnóstico computadorizado, mecânica preventiva e corretiva, revisão completa, freios, suspensão, troca de óleo e injeção com tecnologia de ponta e transparência total.">
+  <meta name="theme-color" content="#090D16">
+  <title>Xancar Auto Center | Centro Automotivo Premium & Manutenção de Alta Precisão</title>
 
-  <!-- Google Fonts & Font Awesome -->
+  <!-- Open Graph / Meta SEO -->
+  <meta property="og:title" content="Xancar Auto Center | Centro Automotivo Premium">
+  <meta property="og:description" content="Engenharia automotiva de precisão, manutenção preventiva e diagnósticos computadorizados com transparência total.">
+  <meta property="og:type" content="website">
+
+  <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    /* ==========================================
-       VARIÁVEIS CSS E RESET
-       ========================================== */
+    /* ==========================================================================
+       1. VARIAVEIS E DESIGN SYSTEM PREMIUM AUTOMOTIVO
+       ========================================================================== */
     :root {
-      --bg-primary: #0F172A;      /* Azul escuro profissional */
-      --bg-secondary: #1E293B;    /* Tom ligeiramente mais claro para cards/seções */
-      --bg-accent: #1F2937;       /* Cinza grafite elegante */
-      --color-cta: #F97316;       /* Laranja vibrante de alto contraste */
-      --color-cta-hover: #EA580C; /* Hover do CTA */
-      --color-text: #F8FAFC;      /* Texto principal */
-      --color-text-muted: #94A3B8;/* Texto secundário */
-      --color-border: #334155;    /* Bordas sutis */
-      --color-whatsapp: #25D366;  /* Verde oficial WhatsApp */
-      --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-      --container-max: 1200px;
+      --bg-dark: #070A10;
+      --bg-surface-1: rgba(15, 23, 42, 0.85);
+      --bg-surface-2: rgba(19, 28, 49, 0.9);
+      --bg-card: rgba(24, 35, 60, 0.85);
+      --bg-card-hover: rgba(30, 45, 77, 0.95);
+      
+      --color-primary: #F97316;       /* Laranja Automotivo Esportivo */
+      --color-primary-hover: #EA580C;
+      --color-primary-glow: rgba(249, 115, 22, 0.3);
+      
+      --color-whatsapp: #25D366;      /* Verde Oficial WhatsApp */
+      --color-whatsapp-hover: #20BA5A;
+      --color-whatsapp-glow: rgba(37, 211, 102, 0.35);
+
+      --color-cyan: #38BDF8;
+      
+      --color-text-main: #F8FAFC;
+      --color-text-sub: #94A3B8;
+      --color-text-muted: #64748B;
+      --color-border: rgba(255, 255, 255, 0.1);
+      --color-border-glow: rgba(249, 115, 22, 0.4);
+
+      --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Space Grotesk', system-ui, sans-serif;
+
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
+      --shadow-glow: 0 0 30px rgba(249, 115, 22, 0.2);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    * {
+    /* Reset & Base com IMAGEM DE FUNDO FIXA (Parallax/Scroll) */
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -38,631 +70,1084 @@
 
     html {
       scroll-behavior: smooth;
+      font-size: 16px;
+      text-size-adjust: 100%;
     }
 
     body {
       font-family: var(--font-main);
-      background-color: var(--bg-primary);
-      color: var(--color-text);
+      color: var(--color-text-main);
       line-height: 1.6;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      
+      /* IMAGEM DE FUNDO FIXA EM TODA A PÁGINA */
+      background-color: var(--bg-dark);
+      background-image: 
+        linear-gradient(100deg, rgba(7, 10, 16, 0.88) 0%, rgba(7, 10, 16, 0.85) 50%, rgba(7, 10, 16, 0.98) 100%),
+        url('./img/xancar-logooficial.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
-    /* ==========================================
-       UTILITÁRIOS E LAYOUT
-       ========================================== */
     .container {
-      max-width: var(--container-max);
+      width: 100%;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
     section {
-      padding: 5rem 0;
+      padding: 6rem 0;
+      position: relative;
     }
 
-    h1, h2, h3 {
-      line-height: 1.2;
-      font-weight: 800;
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      letter-spacing: -0.02em;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(249, 115, 22, 0.15);
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      color: var(--color-primary);
+      padding: 0.4rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
     }
 
     .section-title {
-      font-size: 2.25rem;
-      text-align: center;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: #FFFFFF;
       margin-bottom: 1rem;
-      color: #FFF;
+      line-height: 1.2;
     }
 
     .section-subtitle {
+      color: var(--color-text-sub);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      max-width: 680px;
+      margin: 0 auto 3.5rem auto;
       text-align: center;
-      color: var(--color-text-muted);
-      max-width: 600px;
-      margin: 0 auto 3rem auto;
-      font-size: 1.125rem;
     }
 
-    /* ==========================================
-       BOTÕES E COMPONENTES
-       ========================================== */
+    .text-center { text-align: center; }
+    .text-gradient {
+      background: linear-gradient(135deg, #FFFFFF 20%, var(--color-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ==========================================================================
+       2. REVEAL ON SCROLL ANIMATIONS
+       ========================================================================== */
+    .reveal-init {
+      opacity: 0;
+      transition: var(--transition-smooth);
+      will-change: transform, opacity;
+    }
+
+    .reveal-fade-up { transform: translateY(40px); }
+    .reveal-fade-left { transform: translateX(-40px); }
+    .reveal-fade-right { transform: translateX(40px); }
+    .reveal-zoom-in { transform: scale(0.92); }
+
+    .reveal-active {
+      opacity: 1 !important;
+      transform: translateY(0) translateX(0) scale(1) !important;
+    }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* ==========================================================================
+       3. COMPONENTES E BOTÕES
+       ========================================================================== */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.75rem;
-      background-color: var(--color-cta);
-      color: #FFF;
       font-weight: 700;
-      font-size: 1.125rem;
-      padding: 1.125rem 2rem;
-      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-md);
       text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
+      transition: var(--transition-smooth);
       cursor: pointer;
-      border: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
     }
 
-    .btn:hover {
-      background-color: var(--color-cta-hover);
+    .btn-whatsapp {
+      background: var(--color-whatsapp);
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 20px var(--color-whatsapp-glow);
+    }
+
+    .btn-whatsapp::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(30deg);
+      transition: 0.6s ease;
+    }
+
+    .btn-whatsapp:hover::after { left: 130%; }
+
+    .btn-whatsapp:hover {
+      background: var(--color-whatsapp-hover);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #D97706 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 20px var(--color-primary-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--color-border-glow);
+      color: var(--color-text-main);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      background: rgba(249, 115, 22, 0.15);
+      border-color: var(--color-primary);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.6);
     }
 
     .btn-large {
-      font-size: 1.25rem;
-      padding: 1.25rem 2.5rem;
-      width: 100%;
-      max-width: 400px;
+      padding: 1.1rem 2.2rem;
+      font-size: 1.05rem;
     }
 
-    /* ==========================================
-       HEADER & NAV
-       ========================================== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 999;
+      background: var(--color-whatsapp);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      transition: var(--transition-smooth);
+      animation: pulse-green 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.15) rotate(8deg);
+      background: var(--color-whatsapp-hover);
+    }
+
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* ==========================================================================
+       4. HEADER & NAV
+       ========================================================================== */
     header {
-      background-color: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(8px);
+      background-color: rgba(7, 10, 16, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
       border-bottom: 1px solid var(--color-border);
-      padding: 1rem 0;
+      padding: 0.8rem 0;
+      transition: var(--transition-fast);
     }
 
     .nav-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1.5rem;
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #FFF;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      flex-shrink: 0;
     }
 
-    .logo span {
-      color: var(--color-cta);
-    }
-
-    /* ==========================================
-       HERO SECTION (ADAPTÁVEL)
-       ========================================== */
-    .hero {
-      /* Ajuste de padding para compensar o header sticky */
-      padding: 8rem 0 6rem 0; 
-      
-      /* MÁGICA RESPONSIVA PARTE 1: Configuração padrão para DESKTOP (Computador) */
-      /* Usamos linear-gradient para escurecer a imagem e destacar o texto */
-      background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.95) 100%),
-                        url('./img/xan-logo-desktop.jpg'); /* <- Caminho da imagem horizontal */
-      
-      background-position: center center;
-      background-size: cover; /* <- Faz a imagem cobrir toda a área sem distorcer */
-      background-repeat: no-repeat;
-      background-attachment: fixed; /* <- Efeito Parallax opcional (pode desativar em mobile se travar) */
-      text-align: center;
-      color: #FFF;
-    }
-
-    .hero-content {
-      max-width: 850px;
-      margin: 0 auto;
-      /* Adiciona um leve drop-shadow no texto para garantir leitura sobre a imagem */
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5); 
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: rgba(30, 41, 59, 0.9); /* Mais opaco para leitura */
-      border: 1px solid #38BDF8; /* Borda da cor do acento */
-      padding: 0.6rem 1.2rem;
-      border-radius: 2rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #38BDF8;
-      margin-bottom: 2rem;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem; /* Levemente maior em desktop */
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.03em;
-      color: #FFF;
-    }
-
-    .hero p {
-      font-size: 1.35rem;
-      color: #E2E8F0; /* Texto claro, mas não puro branco */
-      margin-bottom: 3rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      font-weight: 500;
-    }
-
-    /* ==========================================
-       SEÇÃO ALERTA (PREVENTIVA)
-       ========================================== */
-    .alert-section {
-      background-color: #1E1B4B; /* Tom azul/roxo de atenção */
-      border-top: 1px solid #312E81;
-      border-bottom: 1px solid #312E81;
-    }
-
-    .alert-card {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid #4338CA;
-      border-radius: 1rem;
-      padding: 3rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .alert-text h2 {
-      font-size: 2rem;
-      color: #F8FAFC;
-      margin-bottom: 1rem;
-    }
-
-    .alert-text p {
-      color: #CBD5E1;
-      margin-bottom: 1.25rem;
-      font-size: 1.05rem;
-    }
-
-    .alert-box {
-      background-color: rgba(239, 68, 68, 0.1);
-      border-left: 4px solid #EF4444;
-      padding: 1.25rem;
-      border-radius: 0 0.5rem 0.5rem 0;
-      margin-top: 1.5rem;
-    }
-
-    .alert-box strong {
-      color: #FCA5A5;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .alert-img {
-      width: 100%;
-      border-radius: 0.75rem;
-      object-fit: cover;
-      height: 320px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-
-    /* ==========================================
-       SEÇÃO SERVIÇOS
-       ========================================== */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--color-border);
-      border-radius: 1rem;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-      border-color: #475569;
-    }
-
-    .service-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .service-content {
-      padding: 2rem;
-    }
-
-    .service-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #FFF;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .service-content h3 i {
-      color: var(--color-cta);
-    }
-
-    .service-content p {
-      color: var(--color-text-muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .service-list {
-      list-style: none;
-    }
-
-    .service-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #CBD5E1;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    .service-list li i {
-      color: #38BDF8;
-    }
-
-    /* ==========================================
-       SEÇÃO DIFERENCIAIS
-       ========================================== */
-    .differentials {
-      background-color: var(--bg-accent);
-    }
-
-    .differentials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .diff-card {
-      background-color: var(--bg-primary);
-      padding: 2.5rem 2rem;
-      border-radius: 1rem;
-      border: 1px solid var(--color-border);
-      text-align: center;
-    }
-
-    .diff-icon {
-      width: 64px;
-      height: 64px;
-      background-color: rgba(249, 115, 22, 0.1);
-      color: var(--color-cta);
-      border-radius: 50%;
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, #B45309 100%);
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.75rem;
-      margin: 0 auto 1.5rem auto;
+      box-shadow: 0 4px 12px var(--color-primary-glow);
     }
 
-    .diff-card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
+    .logo-badge i {
+      font-size: 1.4rem;
+      color: #FFFFFF;
     }
 
-    .diff-card p {
-      color: var(--color-text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* ==========================================
-       SEÇÃO DEPOIMENTOS
-       ========================================== */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .testimonial-card {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--color-border);
-      border-radius: 1rem;
-      padding: 2rem;
+    .logo-text-group {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      line-height: 1.1;
     }
 
-    .stars {
-      color: #FBBF24;
-      margin-bottom: 1rem;
+    .logo-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
     }
 
-    .testimonial-card p {
-      color: #CBD5E1;
-      font-style: italic;
-      margin-bottom: 1.5rem;
+    .logo-subtitle {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
     }
 
-    .user-info {
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--color-text-sub);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover { color: var(--color-primary); }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--color-primary);
+      transition: var(--transition-fast);
+    }
+
+    .nav-link:hover::after { width: 100%; }
+
+    .header-actions {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
 
-    .user-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: #FFFFFF;
+      font-size: 1.4rem;
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       5. HERO SECTION
+       ========================================================================== */
+    .hero {
+      padding: 6rem 0 5rem 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--color-text-sub);
+      margin-bottom: 2.2rem;
+      max-width: 580px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+    }
+
+    .stat-number span { color: var(--color-primary); }
+    .stat-label { font-size: 0.85rem; color: var(--color-text-muted); }
+
+    .hero-image-wrapper {
+      position: relative;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border-glow);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: var(--bg-card);
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 480px;
       object-fit: cover;
+      display: block;
+      transition: var(--transition-smooth);
     }
 
-    .user-details h4 {
-      font-size: 1rem;
-      color: #FFF;
+    .hero-image-wrapper:hover img { transform: scale(1.04); }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(19, 28, 49, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 1.2rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
-    .user-details span {
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
+    .hero-floating-card i {
+      font-size: 2.2rem;
+      color: var(--color-primary);
     }
 
-    /* ==========================================
-       SEÇÃO FAQ
-       ========================================== */
-    .faq {
-      background-color: var(--bg-accent);
+    /* ==========================================================================
+       6. NOVA SEÇÃO DE ALERTA DE BARULHINHOS (INTEGRADA E ESTILIZADA)
+       ========================================================================== */
+    .alert-section {
+      padding: 5rem 0;
     }
 
+    .alert-card {
+      background: linear-gradient(135deg, rgba(24, 35, 60, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 1px solid rgba(239, 68, 68, 0.4); /* Borda em tom de alerta suave */
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(239, 68, 68, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .alert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, #EF4444 0%, var(--color-primary) 100%);
+    }
+
+    .alert-text h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: #FFFFFF;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .alert-text p {
+      color: var(--color-text-sub);
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .alert-box {
+      margin-top: 1.8rem;
+      background: rgba(239, 68, 68, 0.1);
+      border-left: 4px solid #EF4444;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      color: #FCA5A5;
+      font-size: 0.98rem;
+    }
+
+    .alert-box strong {
+      display: block;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .alert-img-wrapper {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .alert-img {
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: var(--transition-smooth);
+    }
+
+    .alert-card:hover .alert-img {
+      transform: scale(1.03);
+    }
+
+    /* ==========================================================================
+       7. SEÇÃO MECÂNICA PREVENTIVA vs CORRETIVA
+       ========================================================================== */
+    .preventive-section {
+      background-color: var(--bg-surface-1);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      backdrop-filter: blur(12px);
+      transition: var(--transition-smooth);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .feature-icon-box {
+      width: 58px;
+      height: 58px;
+      background: rgba(249, 115, 22, 0.15);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.35rem;
+      color: #FFFFFF;
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-card p {
+      color: var(--color-text-sub);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       8. SERVIÇOS & MODAL
+       ========================================================================== */
+    .service-tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .tab-btn {
+      background: var(--bg-surface-1);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-sub);
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--color-border-glow);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-card-img-wrapper {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .service-card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .service-card:hover .service-card-img-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .service-card-body {
+      padding: 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card-body h3 {
+      font-size: 1.35rem;
+      color: #FFFFFF;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .service-card-body h3 i { color: var(--color-primary); }
+
+    .service-card-body p {
+      color: var(--color-text-sub);
+      font-size: 0.925rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(7, 10, 16, 0.88);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: var(--bg-surface-2);
+      border: 1px solid var(--color-border-glow);
+      border-radius: var(--radius-lg);
+      max-width: 750px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+      transform: scale(0.9);
+      transition: var(--transition-smooth);
+    }
+
+    .modal-overlay.active .modal-content { transform: scale(1); }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      color: #FFFFFF;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: var(--transition-fast);
+    }
+
+    .modal-close:hover { background: var(--color-primary); }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .modal-info-box {
+      background: var(--bg-card);
+      padding: 1.2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+
+    .modal-info-box h5 {
+      color: var(--color-primary);
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ==========================================================================
+       9. GALERIA VISUAL
+       ========================================================================== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 250px;
+      border: 1px solid var(--color-border);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(7, 10, 16, 0.9) 0%, rgba(7, 10, 16, 0) 70%);
+      display: flex;
+      align-items: flex-end;
+      padding: 1.2rem;
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* ==========================================================================
+       10. DIFERENCIAIS
+       ========================================================================== */
+    .differentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .diff-card {
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.8rem;
+      backdrop-filter: blur(12px);
+      transition: var(--transition-smooth);
+    }
+
+    .diff-card:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-5px);
+    }
+
+    .diff-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(249, 115, 22, 0.15);
+      color: var(--color-primary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ==========================================================================
+       11. FAQ ACCORDION
+       ========================================================================== */
     .faq-container {
       max-width: 800px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
     }
 
     .faq-item {
-      background-color: var(--bg-primary);
+      background: var(--bg-card);
       border: 1px solid var(--color-border);
-      border-radius: 0.75rem;
-      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      transition: var(--transition-fast);
     }
 
-    .faq-item h3 {
-      font-size: 1.125rem;
-      margin-bottom: 0.75rem;
-      color: #FFF;
+    .faq-header {
+      padding: 1.2rem 1.5rem;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.75rem;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #FFFFFF;
     }
 
-    .faq-item h3 i {
-      color: var(--color-cta);
+    .faq-header i {
+      color: var(--color-primary);
+      transition: var(--transition-smooth);
     }
 
-    .faq-item p {
-      color: var(--color-text-muted);
+    .faq-body {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      color: var(--color-text-sub);
       font-size: 0.95rem;
+      transition: max-height 0.35s ease, padding 0.35s ease;
     }
 
-    /* ==========================================
-       RODAPÉ
-       ========================================== */
+    .faq-item.active .faq-header i { transform: rotate(180deg); }
+    .faq-item.active .faq-body {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      max-height: 300px;
+    }
+
+    /* ==========================================================================
+       12. FOOTER
+       ========================================================================== */
     footer {
-      background-color: #0B0F17;
+      background-color: rgba(4, 6, 10, 0.461);
       border-top: 1px solid var(--color-border);
-      padding: 4rem 0 2rem 0;
+      padding: 5rem 0 2rem 0;
+      color: var(--color-text-sub);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
       gap: 3rem;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
 
-    .footer-brand p {
+    .footer-column h4 {
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .footer-column h4::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--color-primary);
+    }
+
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.75rem; }
+    .footer-links a {
       color: var(--color-text-muted);
-      margin-top: 1rem;
-      font-size: 0.95rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition-fast);
     }
-
-    .footer-info h4 {
-      font-size: 1.125rem;
-      margin-bottom: 1.25rem;
-      color: #FFF;
-    }
-
-    .footer-info ul {
-      list-style: none;
-    }
-
-    .footer-info ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      color: var(--color-text-muted);
-      margin-bottom: 0.875rem;
-      font-size: 0.95rem;
-    }
-
-    .footer-info ul li i {
-      color: var(--color-cta);
-      margin-top: 0.2rem;
-    }
+    .footer-links a:hover { color: var(--color-primary); }
 
     .footer-bottom {
-      text-align: center;
-      padding-top: 2rem;
       border-top: 1px solid var(--color-border);
-      color: var(--color-text-muted);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
       font-size: 0.875rem;
+      color: var(--color-text-muted);
     }
 
-    /* ==========================================
-       RESPONSIVIDADE (MEDIA QUERIES)
-       ========================================== */
-    
-    /* MÁGICA RESPONSIVA PARTE 2: Configurações para CELULARES (Telas até 768px) */
+    .tovar-link {
+      color: var(--color-cyan);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       13. RESPONSIVIDADE
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+      .hero-subtitle { margin-left: auto; margin-right: auto; }
+      .hero-cta-group { justify-content: center; }
+      .alert-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
     @media (max-width: 768px) {
-      
-      /* TROCA A IMAGEM DE FUNDO AQUI */
-      .hero {
-        /* Aumentamos o padding para a imagem vertical aparecer mais */
-        padding: 10rem 0 8rem 0; 
+      section { padding: 4rem 0; }
+      .mobile-toggle { display: block; }
 
-        
-        background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.95) 100%),
-                          url('img/xancar-logooficial.jpg'); /* <- Caminho da imagem vertical */
-        
-        /* Desativamos o attachment fixed (parallax) em mobile pois consome muita bateria e trava */
-        background-attachment: scroll; 
-        
-        /* Centralizamos a imagem verticalmente */
-        background-position: center center; 
-      }
-
-      .hero h1 {
-        font-size: 2.25rem; /* Tamanho do texto ajustado para telas menores */
-        padding: 0 0.5rem; /* Margem interna nas laterais */
-      }
-
-      .hero p {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-        margin-bottom: 2.5rem;
-      }
-
-      /* Ajustes gerais de seção em mobile */
-      section {
-        padding: 3.5rem 0;
-      }
-
-      .section-title {
-        font-size: 1.75rem;
-      }
-
-      .btn-large {
+      .nav-menu {
+        position: fixed;
+        top: 68px;
+        left: 0;
         width: 100%;
-        max-width: 100%; /* Botão ocupa toda a largura */
+        background: var(--bg-surface-2);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+        transform: translateY(-150%);
+        transition: var(--transition-smooth);
+        z-index: 999;
       }
-      
-      /* Ajuste da seção de alerta em mobile */
-      .alert-card {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem 1.5rem;
+
+      .nav-menu.active { transform: translateY(0); }
+
+      .header-actions .btn-whatsapp span { display: none; }
+      .header-actions .btn-whatsapp {
+        padding: 0.6rem 0.9rem;
+        font-size: 1.1rem;
       }
-      
-      .alert-text h2 {
-        font-size: 1.75rem;
-      }
-      
-      .alert-img {
-        height: 250px;
-      }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .modal-grid { grid-template-columns: 1fr; }
     }
 
-    /* Ajustes intermediários (Tablets) */
-    @media (max-width: 992px) and (min-width: 769px) {
-       .alert-card {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
+    @media (max-width: 375px) {
+      .container { padding: 0 1rem; }
+      .hero-stats { grid-template-columns: 1fr; gap: 1rem; }
     }
-
-      /* Estilo base para el enlace */
-  .tovar-link {
-    color: #0070f3; /* Color azul moderno */
-    text-decoration: none; /* Quita el subrayado simple por defecto */
-    font-weight: 600;
-    display: inline-block;
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave de color y movimiento */
-  }
-
-  /* Efecto al pasar el cursor (Hover) */
-  .tovar-link:hover {
-    color: #00dfd8; /* Cambia a un tono cian brillante */
-    transform: translateY(-1px); /* Pequeño salto hacia arriba */
-    text-shadow: 0 0 8px rgba(0, 223, 216, 0.6); /* Efecto de brillo sutil */
-  }
-
-  /* Línea animada decorativa debajo del texto (opcional y elegante) */
-  .tovar-link::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #00dfd8;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-
-  .tovar-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20revis%C3%A3o." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="whatsapp-float" 
+     aria-label="Atendimento via WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- 1. HEADER & NAVIGATION -->
   <header>
     <div class="container nav-wrapper">
-      <a href="#" class="logo">
-        <i class="fa-solid fa-wrench"></i> XANCAR <span>AUTO CENTER</span>
+      <a href="#" class="logo-container" aria-label="Xancar Auto Center - Página Inicial">
+        <div class="logo-badge">
+          <i class="fa-solid fa-car-side"></i>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-title">XANCAR</span>
+          <span class="logo-subtitle">AUTO CENTER PREMIUM</span>
+        </div>
       </a>
-      <!-- Botão de contato do Header simplificado para Mobile -->
-      <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20revis%C3%A3o%20na%20Xancar%20Auto%20Center." target="_blank" class="btn" style="padding: 0.6rem 1rem; font-size: 0.85rem;">
-        <i class="fa-brands fa-whatsapp"></i> <span class="hide-mobile">Fale Conosco</span>
-      </a>
+
+      <!-- MENU NAVEGAÇÃO -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#alerta" class="nav-link">Alerta</a></li>
+        <li><a href="#preventiva" class="nav-link">Preventiva</a></li>
+        <li><a href="#servicos" class="nav-link">Serviços</a></li>
+        <li><a href="#galeria" class="nav-link">Galeria</a></li>
+        <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+        <li><a href="#faq" class="nav-link">Dúvidas</a></li>
+      </ul>
+
+      <!-- BOTÃO HEADER -->
+      <div class="header-actions">
+        <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20servi%C3%A7o." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Agendar no WhatsApp</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- SEÇÃO HERO (COM FUNDO ADAPTÁVEL) -->
+  <!-- 2. HERO SECTION -->
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <i class="fa-solid fa-shield-halved"></i> Sua oficina mecânica de confiança em Louveira
+      <div class="hero-grid">
+        <div class="hero-content reveal-init reveal-fade-right">
+          <div class="section-badge">
+           <i class="fa-solid fa-car"></i> Seu Carro Merece o Melhor Cuidado
+          </div>
+          <h1 class="hero-title">Qualidade e Transparência  <span class="text-gradient">em Cada Serviço</span></h1>
+          <p class="hero-subtitle">Conte com uma equipe preparada para cuidar do seu veículo, oferecendo serviços de qualidade, orçamento transparente e atendimento de confiança em Louveira.</p>
+          
+          <div class="hero-cta-group">
+            <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large">
+              <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento Rápido
+            </a>
+            <a href="#servicos" class="btn btn-outline btn-large">
+              Ver Serviços
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <div class="stat-number">10k<span>+</span></div>
+              <div class="stat-label">Veículos Atendidos</div>
+            </div>
+            <div>
+              <div class="stat-number">100<span>%</span></div>
+              <div class="stat-label">Transparência</div>
+            </div>
+            <div>
+              <div class="stat-number">4.9<span>★</span></div>
+              <div class="stat-label">Google Reviews</div>
+            </div>
+          </div>
         </div>
-        <h1>Xancar Auto Center: Dirija com Segurança e Tranquilidade</h1>
-        <p>Manutenção preventiva e corretiva feita por quem entende. Transparência total, orçamento justo e a garantia que seu carro precisa.</p>
-        <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Quero%20agendar%20um%20servi%C3%A7o%20na%20Xancar%20Auto%20Center." target="_blank" class="btn btn-large">
-          <i class="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp
-        </a>
+
+        <div class="hero-image-wrapper reveal-init reveal-zoom-in">
+          <img src="https://www.lojadomecanico.com.br/blog/wp-content/uploads/2025/10/imagem-scanner-automotivo-profissional-diagnostico-completo-para-carro.png" alt="Oficina Mecânica Xancar">
+          <div class="hero-floating-card">
+            <i class="fa-solid fa-microchip"></i>
+            <div>
+              <strong style="color: white; display: block; font-size: 0.95rem;">Diagnóstico via Scanner</strong>
+              <span style="color: var(--color-text-sub); font-size: 0.8rem;">Detecção precisa de falhas eletrônicas</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO ALERTA (PREVENTIVA) -->
-  <section class="alert-section">
+  <!-- 3. SEÇÃO DE ALERTA SOLICITADA (INTEGRADA PERFEITAMENTE) -->
+  <section id="alerta" class="alert-section">
     <div class="container">
-      <div class="alert-card">
+      <div class="alert-card reveal-init reveal-fade-up">
         <div class="alert-text">
           <h2>Aquele "barulhinho bobo" pode custar caro</h2>
           <p>Ignorar pequenos barulhos no motor, freio ou suspensão é o primeiro passo para um prejuízo financeiro gigantesco no futuro.</p>
@@ -672,228 +1157,461 @@
             A manutenção preventiva é sempre mais barata, rápida e segura do que a manutenção corretiva emergencial.
           </div>
         </div>
-        <div>
-          <img src="./img/xan-carr-acidentado.png" alt="Carro quebrado na estrada" class="alert-img">
+        <div class="alert-img-wrapper">
+          <img src="./img/xan-carr-acidentado.png" alt="Carro com problemas mecânicos na estrada" class="alert-img">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO SERVIÇOS -->
-  <section class="services">
+  <!-- 4. MECÂNICA PREVENTIVA -->
+  <section id="preventiva" class="preventive-section">
     <div class="container">
-      <h2 class="section-title">Nossos Serviços Especializados</h2>
-      <p class="section-subtitle">Soluções completas para manter o seu veículo rodando sempre com a máxima eficiência e segurança.</p>
-      
-      <div class="services-grid">
-        <!-- Serviço 1 -->
-        <div class="service-card">
-          <img src="https://blog.automaxfiat.com.br/wp-content/uploads/2022/04/manutencao-de-freios-1024x681.webp" alt="Mecânica Geral" class="service-img">
-          <div class="service-content">
-            <h3><i class="fa-solid fa-gears"></i> Mecânica Geral</h3>
-            <p>Sua segurança depende do bom funcionamento mecânico do carro. Diagnosticamos e corrigimos falhas com total precisão.</p>
-            <ul class="service-list">
-              <li><i class="fa-solid fa-check"></i> Revisão de Motor e Câmbio</li>
-              <li><i class="fa-solid fa-check"></i> Troca e Manutenção de Freios</li>
-              <li><i class="fa-solid fa-check"></i> Ajuste e Troca de Suspensão</li>
-              <li><i class="fa-solid fa-check"></i> Troca de Óleo e Filtros Específicos</li>
-            </ul>
+      <div class="text-center reveal-init reveal-fade-up">
+        <div class="section-badge">Manutenção Inteligente</div>
+        <h2 class="section-title">Por que Escolher a Mecânica Preventiva?</h2>
+        <p class="section-subtitle">A manutenção planejada protege seu orçamento e evita que falhas simples se tornem grandes prejuízos.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="feature-card reveal-init reveal-fade-up delay-1">
+          <div class="feature-icon-box"><i class="fa-solid fa-piggy-bank"></i></div>
+          <h3>Economia de Até 70%</h3>
+          <p>A substituição preventiva de componentes no prazo recomendado custa uma fração do valor de reparos emergenciais em motores e transmissões danificados.</p>
+        </div>
+
+        <div class="feature-card reveal-init reveal-fade-up delay-2">
+          <div class="feature-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Segurança em Primeiro Lugar</h3>
+          <p>Freios regulados, suspensão firme e pneus alinhados garantem estabilidade total em frenagens bruscas e pistas molhadas.</p>
+        </div>
+
+        <div class="feature-card reveal-init reveal-fade-up delay-3">
+          <div class="feature-icon-box"><i class="fa-solid fa-gas-pump"></i></div>
+          <h3>Eficiência de Combustível</h3>
+          <p>Injeção eletrônica calibrada e filtros limpos reduzem drasticamente o consumo de combustível e a emissão de poluentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. GALERIA INTERATIVA DE SERVIÇOS -->
+  <section id="servicos">
+    <div class="container">
+      <div class="text-center reveal-init reveal-fade-up">
+        <div class="section-badge">Especialidades Xancar</div>
+        <h2 class="section-title">Serviços Automotivos de Alta Precisão</h2>
+        <p class="section-subtitle">Clique em "Saiba Mais" em qualquer serviço para visualizar detalhes, prazos e os riscos da falta de manutenção.</p>
+      </div>
+
+      <div class="service-tabs-nav reveal-init reveal-fade-up">
+        <button class="tab-btn active" data-category="todos"><i class="fa-solid fa-border-all"></i> Todos</button>
+        <button class="tab-btn" data-category="motor"><i class="fa-solid fa-engine"></i> Motor & Injeção</button>
+        <button class="tab-btn" data-category="seguranca"><i class="fa-solid fa-shield"></i> Freios & Suspensão</button>
+        <button class="tab-btn" data-category="fluidos"><i class="fa-solid fa-droplet"></i> Óleo & Arrefecimento</button>
+      </div>
+
+      <div class="services-grid" id="services-grid">
+        <div class="service-card reveal-init reveal-fade-up" data-category="fluidos">
+          <div class="service-card-img-wrapper">
+            <img src="./img/filtro-oleo.png" alt="Troca de Óleo">
+          </div>
+          <div class="service-card-body">
+            <h3><i class="fa-solid fa-oil-can"></i> Troca de Óleo & Filtros</h3>
+            <p>Substituição de lubrificantes homologados e filtros para preservar a vida útil do motor.</p>
+            <button class="btn btn-outline open-modal-btn" data-service="oleo">
+              Saiba Mais <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- Serviço 2 -->
-        <div class="service-card">
-          <img src="https://pneusbh.com/wp-content/themes/pneusbh2/assets-custom/images/servico/eyJpdiI6InRmT2tqQ0hwa0dDZmtVYWVCZ1RKdWc9PSIsInZhbHVlIjoiUUk0Y0dONHlGMnVXdGJDNkpOR1JlUT09IiwibWFjIjoiNDk3NjhmNTE0YjlmZmVkNGFiNjJiNjc4MTgyMjIwMmZkNGY4NTg1NDE0MzkxNGIzZjVjZjYzMjdiMGViNTdjMiJ9.jpeg" alt="Pneus e Alinhamento" class="service-img">
-          <div class="service-content">
-            <h3><i class="fa-solid fa-circle-notch"></i> Montagem e Pneus</h3>
-            <p>Garanta a estabilidade ideal do veículo, evite o desgaste irregular dos pneus e economize combustível na estrada.</p>
-            <ul class="service-list">
-              <li><i class="fa-solid fa-check"></i> Montagem de Pneus Novos</li>
-              <li><i class="fa-solid fa-check"></i> Alinhamento do Sistema de Direção</li>
-              <li><i class="fa-solid fa-check"></i> Balanceamento das Rodas</li>
-              <li><i class="fa-solid fa-check"></i> Correção de Cambagem</li>
-            </ul>
+        <div class="service-card reveal-init reveal-fade-up delay-1" data-category="seguranca">
+          <div class="service-card-img-wrapper">
+            <img src="https://cdn.dealerspace.ai/bamaq/freio-abs.png" alt="Sistema de Freios">
+          </div>
+          <div class="service-card-body">
+            <h3><i class="fa-solid fa-circle-stop"></i> Sistema de Freios ABS</h3>
+            <p>Inspeção e troca de pastilhas, discos, fluido DOT4 e diagnóstico de sensores ABS.</p>
+            <button class="btn btn-outline open-modal-btn" data-service="freios">
+              Saiba Mais <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="service-card reveal-init reveal-fade-up delay-2" data-category="motor">
+          <div class="service-card-img-wrapper">
+            <img src="https://3lezamauto.com/wp-content/uploads/2025/06/analisis-diagnosis-electrica.jpg" alt="Diagnóstico de Motor">
+          </div>
+          <div class="service-card-body">
+            <h3><i class="fa-solid fa-microchip"></i> Diagnóstico Eletrônico</h3>
+            <p>Leitura e correção de falhas no motor, velas Iridium, bicos injetores e sensores de injeção.</p>
+            <button class="btn btn-outline open-modal-btn" data-service="injecao">
+              Saiba Mais <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="service-card reveal-init reveal-fade-up delay-3" data-category="seguranca">
+          <div class="service-card-img-wrapper">
+            <img src="https://quatrorodas.abril.com.br/wp-content/uploads/2022/09/Meca%CC%82nico-trocando-armotecedor-do-Corsa-da-frota-de-testes-da-revista-Quatro-Rod.jpg?quality=70&strip=info&w=720&crop=1" alt="Suspensão">
+          </div>
+          <div class="service-card-body">
+            <h3><i class="fa-solid fa-car-side"></i> Suspensão & Amortecedores</h3>
+            <p>Substituição de amortecedores, pivôs, buchas e alinhamento de geometria 3D.</p>
+            <button class="btn btn-outline open-modal-btn" data-service="suspensao">
+              Saiba Mais <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO DIFERENCIAIS -->
-  <section class="differentials">
+  <!-- MODAL EXPANSÍVEL -->
+  <div class="modal-overlay" id="service-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="modal-title" style="font-size: 1.8rem; color: #FFF; margin-bottom: 0.5rem;">Título do Serviço</h3>
+      <p id="modal-desc" style="color: var(--color-text-sub); font-size: 1rem; margin-bottom: 1.5rem;">Descrição detalhada...</p>
+
+      <div class="modal-grid">
+        <div class="modal-info-box">
+          <h5><i class="fa-solid fa-clock"></i> Tempo Médio</h5>
+          <span id="modal-time" style="color: #FFF; font-weight: 600;">1 a 2 horas</span>
+        </div>
+        <div class="modal-info-box">
+          <h5><i class="fa-solid fa-calendar-check"></i> Quando Realizar</h5>
+          <span id="modal-when" style="color: #FFF; font-weight: 600;">A cada 10.000km</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="color: #FFF; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--color-whatsapp);"></i> Benefícios Principais</h4>
+        <p id="modal-benefits" style="color: var(--color-text-sub); font-size: 0.95rem;"></p>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <h4 style="color: #FFF; margin-bottom: 0.5rem;"><i class="fa-solid fa-triangle-exclamation" style="color: #EF4444;"></i> Riscos de Não Fazer</h4>
+        <p id="modal-risks" style="color: var(--color-text-sub); font-size: 0.95rem;"></p>
+      </div>
+
+      <a id="modal-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large" style="width: 100%;">
+        <i class="fa-brands fa-whatsapp"></i> Agendar Este Serviço Agora
+      </a>
+    </div>
+  </div>
+
+  <!-- 6. GALERIA FOTOGRÁFICA -->
+  <section id="galeria" style="background: var(--bg-surface-1);">
     <div class="container">
-      <h2 class="section-title">Por que escolher a Xancar Auto Center?</h2>
-      <p class="section-subtitle">Trabalhamos com ética e dedicação para garantir que você continue rodando com total tranquilidade.</p>
+      <div class="text-center reveal-init reveal-fade-up">
+        <div class="section-badge">Estrutura de Ponta</div>
+        <h2 class="section-title">Nossa Oficina em Ação</h2>
+        <p class="section-subtitle">Tecnologia, organização e cuidados de padrão internacional com o seu veículo.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal-init reveal-zoom-in">
+          <img src="https://ekonollantas.com/cdn/shop/files/EKONO3l.jpg?v=1715973947" alt="Mecânico trabalhando">
+          <div class="gallery-overlay">
+            <span style="color: white; font-weight: 700;">Diagnóstico Computadorizado</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-init reveal-zoom-in delay-1">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqmtR0D5uubnZv8cTTfAPo-u79YeMT1PS8uMMok-xI3K3nHbQI0vQVEEb&s=10" alt="Troca de óleo">
+          <div class="gallery-overlay">
+            <span style="color: white; font-weight: 700;">Troca de Óleo Especializada</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-init reveal-zoom-in delay-2">
+          <img src="https://www.c3carecarcenter.com/wp-content/uploads/2025/05/Descubre-el-funcionamiento-esencial-de-los-frenos-antibloqueo-ABS-1038x576.webp" alt="Manutenção de Freios">
+          <div class="gallery-overlay">
+            <span style="color: white; font-weight: 700;">Revisão de Freios ABS</span>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal-init reveal-zoom-in delay-3">
+          <img src="https://a-static.mlcdn.com.br/420x420/kit-ferramenta-sincronismo-motor-fiat-firefly-1-0-1-3-uno-mobi-argo-travamento-comando-valvulas-arvore-manivelas-manutencao-motor-feron/feronferramentas/fo003/921c45bbe0e86ef0536bbfe79dd1d89d.jpeg" alt="Motor e Injeção">
+          <div class="gallery-overlay">
+            <span style="color: white; font-weight: 700;">Sincronismo e Motor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. DIFERENCIAIS DA OFICINA -->
+  <section id="diferenciais">
+    <div class="container">
+      <div class="text-center reveal-init reveal-fade-up">
+        <div class="section-badge">Diferenciais Xancar</div>
+        <h2 class="section-title">Por que Somos Referência Automotiva?</h2>
+        <p class="section-subtitle">Compromisso inegociável com a qualidade, transparência e segurança.</p>
+      </div>
 
       <div class="differentials-grid">
-        <div class="diff-card">
-          <div class="diff-icon">
-            <i class="fa-solid fa-handshake"></i>
-          </div>
-          <h3>Honestidade em Primeiro Lugar</h3>
-          <p>Você só paga pelo que realmente precisa ser feito. Explicamos cada item do seu orçamento de forma clara e sem enrolação.</p>
+        <div class="diff-card reveal-init reveal-fade-up">
+          <div class="diff-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <h3>Mecânicos Especializados</h3>
+          <p>Profissionais continuamente treinados e atualizados nas tecnologias automotivas mais modernas.</p>
         </div>
 
-        <div class="diff-card">
-          <div class="diff-icon">
-            <i class="fa-solid fa-tag"></i>
-          </div>
-          <h3>Preço Justo e Transparente</h3>
-          <p>Oferecemos serviços de alta qualidade por um valor acessível. Sem taxas escondidas e com as melhores condições de pagamento.</p>
+        <div class="diff-card reveal-init reveal-fade-up delay-1">
+          <div class="diff-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Atendimento Rápido</h3>
+          <p>Agendamento simplificado sem filas e prazos de entrega rigorosamente respeitados.</p>
         </div>
 
-        <div class="diff-card">
-          <div class="diff-icon">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-          </div>
-          <h3>Ferramental Adequado</h3>
-          <p>Possuímos as ferramentas certas e necessárias para realizar o diagnóstico e o conserto exato do seu veículo sem improvisos.</p>
+        <div class="diff-card reveal-init reveal-fade-up delay-2">
+          <div class="diff-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <h3>Equipamentos Modernos</h3>
+          <p>Ferramental específico e elevadores de alta precisão para proteger seu carro.</p>
+        </div>
+
+        <div class="diff-card reveal-init reveal-fade-up delay-3">
+          <div class="diff-icon"><i class="fa-solid fa-box-check"></i></div>
+          <h3>Peças de Qualidade</h3>
+          <p>Utilizamos apenas componentes originais ou de marcas homologadas mundialmente.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO DEPOIMENTOS -->
-  <section class="testimonials">
+  <!-- 8. FAQ -->
+  <section id="faq" style="background: var(--bg-surface-1);">
     <div class="container">
-      <h2 class="section-title">O que nossos clientes dizem</h2>
-      <p class="section-subtitle">A satisfação e a confiança de quem já fez a manutenção conosco na Xancar Auto Center.</p>
+      <div class="text-center reveal-init reveal-fade-up">
+        <div class="section-badge">Dúvidas Frequentes</div>
+        <h2 class="section-title">Perguntas Recorrentes</h2>
+        <p class="section-subtitle">Tire suas dúvidas rápidas sobre nossos serviços e prazos.</p>
+      </div>
 
-      <div class="testimonials-grid">
-        <!-- Depoimento 1 -->
-        <div class="testimonial-card">
-          <div>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p>"O Xan presta um atendimento excelente! Levei o carro achando que era um problema sério no motor, mas ele identificou que era apenas um ajuste simples. Muito honesto, transparente e profissional. Recomendo de olhos fechados "</p>
+      <div class="faq-container reveal-init reveal-fade-up">
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>De quanto em quanto tempo devo fazer a revisão geral?</span>
+            <i class="fa-solid fa-chevron-down"></i>
           </div>
-          <div class="user-info">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5k0E0cKjJx7ZwUgD190ULCcMLCMF5lHEr_-tqesUy0J6ds0o2idSPhPQi&s=10" alt="Carlos Eduardo" class="user-avatar">
-            <div class="user-details">
-              <h4>Bruno Ferreira</h4>
-              <span>Cliente desde 2017</span>
-            </div>
+          <div class="faq-body">
+            Recomendamos a revisão a cada 10.000 km ou a cada 12 meses, o que ocorrer primeiro. Isso garante a identificação precoce de desgastes.
           </div>
         </div>
 
-        <!-- Depoimento 2 -->
-        <div class="testimonial-card">
-          <div>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p>"Fiz o alinhamento, balanceamento e a troca dos pneus antes de viajar com a família. O carro ficou firme, perfeito e o preço foi super justo em relação a outras oficinas."</p>
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Preciso agendar com antecedência para ser atendido?</span>
+            <i class="fa-solid fa-chevron-down"></i>
           </div>
-          <div class="user-info">
-            <img src="https://i.pinimg.com/736x/52/c0/b9/52c0b9edbadaf12ea99add9a80188f45.jpg" alt="Mariana Souza" class="user-avatar">
-            <div class="user-details">
-              <h4>Daniela Moraes</h4>
-              <span>Cliente desde 2022</span>
-            </div>
+          <div class="faq-body">
+            Para sua maior comodidade e atendimento sem filas, recomendamos o agendamento prévio via WhatsApp. Porém, atendemos emergências pontuais conforme a disponibilidade da oficina.
           </div>
         </div>
 
-        <!-- Depoimento 3 -->
-        <div class="testimonial-card">
-          <div>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p>"Ótima oficina! Agendei pelo WhatsApp, levei no horário e o serviço nos freios ficou impecável. Transparência e agilidade nota 10."</p>
+        <div class="faq-item">
+          <div class="faq-header">
+            <span>Vocês oferecem garantia nos serviços e peças?</span>
+            <i class="fa-solid fa-chevron-down"></i>
           </div>
-          <div class="user-info">
-            <img src="https://i.pinimg.com/736x/dc/9f/3b/dc9f3b899dd232d83879b9a1f453c888.jpg" alt="Roberto Mendes" class="user-avatar">
-            <div class="user-details">
-              <h4>Thiago Ribeiro</h4>
-              <span>Cliente desde 2024</span>
-            </div>
+          <div class="faq-body">
+            Sim! Todos os nossos serviços e peças aplicadas acompanham garantia formalizada de fábrica e de mão de obra.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO FAQ -->
-  <section class="faq">
-    <div class="container">
-      <h2 class="section-title">Dúvidas Frequentes</h2>
-      <p class="section-subtitle">Respostas rápidas para as principais dúvidas sobre os nossos serviços.</p>
-
-      <div class="faq-container">
-        <div class="faq-item">
-          <h3><i class="fa-solid fa-circle-question"></i> Os serviços possuem garantia?</h3>
-          <p>Sim! Todos os nossos serviços de manutenção e as peças instaladas possuem garantia conforme o Código de Defesa do Consumidor, garantindo total tranquilidade para você.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3><i class="fa-solid fa-circle-question"></i> Quanto tempo demora uma revisão preventiva?</h3>
-          <p>O tempo varia de acordo com o tipo de serviço necessário. Revisões básicas (troca de óleo, alinhamento e balanceamento) costumam ser finalizadas no mesmo dia. Ao agendar pelo WhatsApp, informamos a estimativa exata.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3><i class="fa-solid fa-circle-question"></i> Preciso agendar o atendimento com antecedência?</h3>
-          <p>Recomendamos o agendamento prévio via WhatsApp para garantir que o seu carro seja atendido sem filas e com a prioridade que você merece.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEÇÃO DE AÇÃO FINAL -->
-  <section style="text-align: center; background: linear-gradient(180deg, var(--bg-accent) 0%, var(--bg-primary) 100%); padding: 6rem 0;">
-    <div class="container">
-      <h2 style="font-size: 2.25rem; margin-bottom: 1rem;">Pronto para rodar com segurança?</h2>
-      <p style="color: var(--color-text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">
-        Fale agora mesmo com nossa equipe e garanta a melhor manutenção para o seu veículo com transparência e preço justo.
+  <!-- CTA FINAL -->
+  <section style="background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.18) 0%, rgba(7, 10, 16, 0.95) 80%); text-align: center;">
+    <div class="container reveal-init reveal-zoom-in">
+      <h2 style="font-size: 2.5rem; color: #FFF; margin-bottom: 1rem;">Pronto para Cuidar do seu Veículo?</h2>
+      <p style="color: var(--color-text-sub); max-width: 600px; margin: 0 auto 2.5rem auto;">
+        Entre em contato agora mesmo via WhatsApp e agende seu diagnóstico com nossos especialistas.
       </p>
-      <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Quero%20agendar%20um%20servi%C3%A7o%20na%20Xancar%20Auto%20Center." target="_blank" class="btn btn-large">
-        <i class="fa-brands fa-whatsapp"></i> Fazer Orçamento no WhatsApp
+      <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Quero%20agendar%20minha%20revis%C3%A3o%20agora." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large">
+        <i class="fa-brands fa-whatsapp"></i> Agendar Revisão pelo WhatsApp
       </a>
     </div>
   </section>
 
-  <!-- RODAPÉ -->
+  <!-- 9. FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="logo">
-            <i class="fa-solid fa-wrench"></i> XANCAR <span>AUTO CENTER</span>
+        <div>
+          <a href="#" class="logo-container">
+            <div class="logo-badge">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <div class="logo-text-group">
+              <span class="logo-title">XANCAR</span>
+              <span class="logo-subtitle">AUTO CENTER PREMIUM</span>
+            </div>
           </a>
-          <p>Sua segurança e a integridade do seu veículo são a nossa prioridade. Honestidade, preço justo e eficiência técnica em um só lugar.</p>
+          <p style="margin-top: 1.2rem; font-size: 0.9rem;">Sua oficina de mecânica de alta precisão em Louveira. Transparência, tecnologia avançada e segurança para o seu veículo.</p>
         </div>
 
-        <div class="footer-info">
-          <h4>Atendimento</h4>
-          <ul>
-            <li><i class="fa-solid fa-clock"></i> Segunda a Sexta: 08:00 às 18:00</li>
-            <li><i class="fa-solid fa-clock"></i> Sábado: 08:00 às 12:00</li>
-            <li><i class="fa-solid fa-calendar-xmark"></i> Domingos e Feriados: Fechado</li>
+        <div class="footer-column">
+          <h4>Links Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#alerta">Aviso Importante</a></li>
+            <li><a href="#preventiva">Mecânica Preventiva</a></li>
+            <li><a href="#servicos">Serviços & Especialidades</a></li>
+            <li><a href="#galeria">Galeria da Oficina</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
           </ul>
         </div>
 
-        <div class="footer-info">
-          <h4>Localização & Contato</h4>
-          <ul>
-            <li><i class="fa-solid fa-location-dot"></i> Av. Principal das Oficinas, 1000 - Centro</li>
-            <li><i class="fa-solid fa-phone"></i> (19) 98268-9134 / (19) 3333-2222</li>
-            <li><i class="fa-solid fa-envelope"></i> contato@xancarautocenter.com.br</li>
-          </ul>
+        <div class="footer-column">
+          <h4>Funcionamento</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><strong style="color: #fff;">Segunda a Sexta:</strong> 08:00h às 18:00h</p>
+          <p style="font-size: 0.9rem;"><strong style="color: #fff;">Sábado:</strong> 08:00h às 12:00h</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contato</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot" style="color: var(--color-primary);"></i> Louveira - SP</p>
+          <p style="font-size: 0.9rem;"><i class="fa-solid fa-phone" style="color: var(--color-primary);"></i> (19) 98268-9134</p>
         </div>
       </div>
-<div class="footer-bottom"> 
-  <p>
-    &copy; 2026 Xancar Auto Center. Todos os direitos reservados. Otimizado para conversão.
-    <br>
-    Desenvolvido por 
-    <a href="https://tovartechnology.vercel.app/" target="_blank" rel="noopener noreferrer" class="tovar-link">
-      tovartechnology
-    </a>
-  </p> 
-</div>
-      
+
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Xancar Auto Center. Todos os direitos reservados.</div>
+        <div>
+          Desenvolvido por 
+          <a href="https://tovartechnology.vercel.app/" target="_blank" rel="noopener noreferrer" class="tovar-link">
+            Tovar Technology <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- SCRIPT -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileToggle.querySelector('i').classList.toggle('fa-bars');
+      mobileToggle.querySelector('i').classList.toggle('fa-xmark');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileToggle.querySelector('i').classList.add('fa-bars');
+        mobileToggle.querySelector('i').classList.remove('fa-xmark');
+      });
+    });
+
+    const revealElements = document.querySelectorAll('.reveal-init');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-active');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const serviceCards = document.querySelectorAll('.service-card');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-category');
+
+        serviceCards.forEach(card => {
+          if (category === 'todos' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    const serviceData = {
+      oleo: {
+        title: "Troca de Óleo e Filtros",
+        desc: "A lubrificação correta reduz o atrito entre as peças internas do motor, prevenindo o superaquecimento e o desgaste prematuro.",
+        time: "45 a 60 minutos",
+        when: "A cada 5.000km ou 10.000km (ou 12 meses)",
+        benefits: "Economia de combustível, desempenho silencioso e maior durabilidade do motor.",
+        risks: "Formação de borra, quebra da película lubrificante e fundição do motor."
+      },
+      freios: {
+        title: "Sistema de Freios ABS",
+        desc: "Manutenção completa do sistema de frenagem, incluindo pastilhas, discos, fluido DOT4 e verificação dos sensores de roda.",
+        time: "1 a 2 horas",
+        when: "A cada 10.000km ou quando apresentar chiados",
+        benefits: "Frenagem precisa, eliminação de ruídos e máxima segurança em acionamentos brutos.",
+        risks: "Aumento da distância de frenagem, travamento e risco elevado de colisão."
+      },
+      injecao: {
+        title: "Diagnóstico Eletrônico & Injeção",
+        desc: "Mapeamento completo dos sensores do motor via scanner computadorizado para correção de falhas de aceleração e consumo.",
+        time: "1 hora",
+        when: "Quando a luz da injeção acender ou houver falha na aceleração",
+        benefits: "Motor forte, aceleração uniforme e redução na emissão de fumaça.",
+        risks: "Perda de potência repentina, consumo excessivo e danos ao catalisador."
+      },
+      suspensao: {
+        title: "Suspensão & Estabilidade 3D",
+        desc: "Inspeção de amortecedores, pivôs, buchas e alinhamento tridimensional de alta precisão.",
+        time: "2 a 3 horas",
+        when: "A cada 10.000km ou ao sentir folgas e impactos secos",
+        benefits: "Conforto ao rodar, estabilidade em curvas e desgaste uniforme dos pneus.",
+        risks: "Desgaste prematuro dos pneus, perda de controle em curvas e barulhos secos."
+      }
+    };
+
+    const modal = document.getElementById('service-modal');
+    const modalClose = document.getElementById('modal-close');
+    const openModalBtns = document.querySelectorAll('.open-modal-btn');
+
+    openModalBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-service');
+        const data = serviceData[key];
+
+        if (data) {
+          document.getElementById('modal-title').textContent = data.title;
+          document.getElementById('modal-desc').textContent = data.desc;
+          document.getElementById('modal-time').textContent = data.time;
+          document.getElementById('modal-when').textContent = data.when;
+          document.getElementById('modal-benefits').textContent = data.benefits;
+          document.getElementById('modal-risks').textContent = data.risks;
+          document.getElementById('modal-whatsapp-link').href = `https://wa.me/5519982689134?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20o%20servi%C3%A7o:%20${encodeURIComponent(data.title)}`;
+
+          modal.classList.add('active');
+        }
+      });
+    });
+
+    modalClose.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const header = item.querySelector('.faq-header');
+      header.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
