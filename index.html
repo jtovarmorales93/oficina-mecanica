@@ -61,45 +61,39 @@
       --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Reset & Base com IMAGEM DE FUNDO FIXA (Parallax/Scroll) */
+    /* Reset & Base */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    .logo-container {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 12px;
+    }
 
-.logo-container {
-  display: flex;
-  align-items: center; /* Alinea la imagen y el texto verticalmente al centro */
-  text-decoration: none; /* Quita el subrayado del enlace */
-  gap: 12px; /* Controla el espacio horizontal entre la imagen y el texto */
-}
+    .logo-image {
+      height: 100px;
+      width: auto;
+      object-fit: contain;
+    }
 
-.logo-image {
-  height: 100px; /* Ajusta la altura según el tamaño de tu menú */
-  width: auto;  /* Mantiene la proporción original de tu logotipo */
-  object-fit: contain;
-}
+    .logo-text-group {
+      display: flex;
+      flex-direction: column;
+    }
 
-.logo-text-group {
-  display: flex;
-  flex-direction: column; /* Mantiene el título arriba y el subtítulo abajo */
-}
+    .logo-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
 
-.logo-title {
-  font-weight: bold;
-  font-size: 1.2rem;
-  /* Añade aquí tus estilos de color y tipografía */
-}
-
-.logo-subtitle {
-  font-size: 0.8rem;
-  /* Añade aquí tus estilos de color y tipografía */
-}
-
-
-
+    .logo-subtitle {
+      font-size: 0.8rem;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -113,16 +107,41 @@
       line-height: 1.6;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
-      
-      /* IMAGEM DE FUNDO FIXA EM TODA A PÁGINA */
       background-color: var(--bg-dark);
+      position: relative;
+    }
+
+    /* ==========================================================================
+       CONFIGURACIÓN DE IMAGEN DE FONDO ESTABLE (SIN ZOOM AL HACER SCROLL)
+       ========================================================================== */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      
       background-image: 
         linear-gradient(100deg, rgba(7, 10, 16, 0.88) 0%, rgba(7, 10, 16, 0.85) 50%, rgba(7, 10, 16, 0.98) 100%),
         url('./img/xancar-logooficial.jpg');
-      background-attachment: fixed;
+      
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      will-change: transform;
+    }
+
+    @media (max-width: 768px) {
+      body::before {
+        background-image: 
+          linear-gradient(100deg, rgba(7, 10, 16, 0.88) 0%, rgba(7, 10, 16, 0.85) 50%, rgba(7, 10, 16, 0.98) 100%),
+          url('./img/xancar-logooficial.jpg');
+          
+        background-position: center;
+        background-size: cover;
+      }
     }
 
     .container {
@@ -522,7 +541,7 @@
     }
 
     /* ==========================================================================
-       6. NOVA SEÇÃO DE ALERTA DE BARULHINHOS (INTEGRADA E ESTILIZADA)
+       6. SEÇÃO DE ALERTA DE BARULHINHOS
        ========================================================================== */
     .alert-section {
       padding: 5rem 0;
@@ -530,7 +549,7 @@
 
     .alert-card {
       background: linear-gradient(135deg, rgba(24, 35, 60, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
-      border: 1px solid rgba(239, 68, 68, 0.4); /* Borda em tom de alerta suave */
+      border: 1px solid rgba(239, 68, 68, 0.4);
       border-radius: var(--radius-lg);
       padding: 3rem;
       display: grid;
@@ -966,7 +985,70 @@
     }
 
     /* ==========================================================================
-       12. FOOTER
+       12. NUEVA SECCIÓN: LOCALIZACIÓN Y MAPA RESPONSIVO
+       ========================================================================== */
+    .location-card {
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      backdrop-filter: blur(12px);
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2.5rem;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .location-info h3 {
+      font-size: 1.8rem;
+      color: #FFFFFF;
+      margin-bottom: 1.5rem;
+    }
+
+    .location-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .location-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      color: var(--color-text-sub);
+      font-size: 1rem;
+    }
+
+    .location-list i {
+      color: var(--color-primary);
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+    }
+
+    /* ESTILOS PARA ADAPTAR EL IFRAME DEL MAPA EM MÓVILES */
+    .map-responsive {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 65%; /* Proporción responsiva para el mapa */
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border-glow);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .map-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0;
+    }
+
+    /* ==========================================================================
+       13. FOOTER
        ========================================================================== */
     footer {
       background-color: rgba(4, 6, 10, 0.562);
@@ -1029,13 +1111,15 @@
     }
 
     /* ==========================================================================
-       13. RESPONSIVIDADE
+       14. RESPONSIVIDADE
        ========================================================================== */
     @media (max-width: 1024px) {
       .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
       .hero-subtitle { margin-left: auto; margin-right: auto; }
       .hero-cta-group { justify-content: center; }
       .alert-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+      .location-card { grid-template-columns: 1fr; gap: 2rem; padding: 1.8rem; }
+      .map-responsive { padding-bottom: 75%; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
     }
 
@@ -1091,15 +1175,14 @@
   <!-- 1. HEADER & NAVIGATION -->
   <header>
     <div class="container nav-wrapper">
-     <a href="#" class="logo-container" aria-label="Xancar Auto Center - Página Inicial">
-  <!-- Se reemplazó el div del icono por la etiqueta de imagen -->
-  <img src="./img/logo-xancar-header.png" alt="Logotipo Xancar" class="logo-image">
-  
-  <div class="logo-text-group">
-    <span class="logo-title">XANCAR</span>
-    <span class="logo-subtitle">AUTO CENTER PREMIUM</span>
-  </div>
-</a>
+      <a href="#" class="logo-container" aria-label="Xancar Auto Center - Página Inicial">
+        <img src="./img/logo-xancar-header.png" alt="Logotipo Xancar" class="logo-image">
+        
+        <div class="logo-text-group">
+          <span class="logo-title">XANCAR</span>
+          <span class="logo-subtitle">AUTO CENTER PREMIUM</span>
+        </div>
+      </a>
 
       <!-- MENU NAVEGAÇÃO -->
       <ul class="nav-menu" id="nav-menu">
@@ -1108,6 +1191,7 @@
         <li><a href="#servicos" class="nav-link">Serviços</a></li>
         <li><a href="#galeria" class="nav-link">Galeria</a></li>
         <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+        <li><a href="#localizacao" class="nav-link">Localização</a></li>
         <li><a href="#faq" class="nav-link">Dúvidas</a></li>
       </ul>
 
@@ -1178,7 +1262,7 @@
     </div>
   </section>
 
-  <!-- 3. SEÇÃO DE ALERTA SOLICITADA (INTEGRADA PERFEITAMENTE) -->
+  <!-- 3. SEÇÃO DE ALERTA -->
   <section id="alerta" class="alert-section">
     <div class="container">
       <div class="alert-card reveal-init reveal-fade-up">
@@ -1405,7 +1489,7 @@
         </div>
 
         <div class="diff-card reveal-init reveal-fade-up delay-3">
-          <div class="diff-icon"><i class="fa-solid fa-box-check"></i></div>
+          <div class="diff-icon"><i class="fa-solid fa-boxes-packing"></i></div>
           <h3>Peças de Qualidade</h3>
           <p>Utilizamos apenas componentes originais ou de marcas homologadas mundialmente.</p>
         </div>
@@ -1413,8 +1497,58 @@
     </div>
   </section>
 
-  <!-- 8. FAQ -->
-  <section id="faq" style="background: var(--bg-surface-1);">
+  <!-- 8. NUEVA SECCIÓN DE LOCALIZACIÓN COM MAPA GOOGLE RESPONSIVO -->
+  <section id="localizacao" style="background: var(--bg-surface-1);">
+    <div class="container">
+      <div class="text-center reveal-init reveal-fade-up">
+        <div class="section-badge">Localização</div>
+        <h2 class="section-title">Venha Conhecer Nossa Oficina</h2>
+        <p class="section-subtitle">Estamos localizados em uma área de fácil acesso para melhor atender você.</p>
+      </div>
+
+      <div class="location-card reveal-init reveal-fade-up">
+        <div class="location-info">
+          <h3>Xancar Auto Center</h3>
+          <ul class="location-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Endereço:</strong><br>
+                Louveira - SP, Brasil
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Horário de Funcionamento:</strong><br>
+                Segunda a Sexta: 08:00h às 18:00h<br>
+                Sábado: 08:00h às 12:00h
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>Telefone / WhatsApp:</strong><br>
+                (19) 98268-9134
+              </div>
+            </li>
+          </ul>
+
+          <a href="https://maps.google.com/?q=Xancar+Auto+Center" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
+            <i class="fa-solid fa-route"></i> Abrir no GPS / Google Maps
+          </a>
+        </div>
+
+        <!-- CONTENEDOR RESPONSIVO DEL MAPA -->
+        <div class="map-responsive">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5266.498803584645!2d-46.98272462630092!3d-23.086095344300762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2df887699aef%3A0x42ed0fec98f4a936!2sXancar%20Auto%20Center!5e1!3m2!1ses-419!2sbr!4v1785338874783!5m2!1ses-419!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section id="faq">
     <div class="container">
       <div class="text-center reveal-init reveal-fade-up">
         <div class="section-badge">Dúvidas Frequentes</div>
@@ -1469,7 +1603,7 @@
     </div>
   </section>
 
-  <!-- 9. FOOTER -->
+  <!-- 10. FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -1494,6 +1628,7 @@
             <li><a href="#servicos">Serviços & Especialidades</a></li>
             <li><a href="#galeria">Galeria da Oficina</a></li>
             <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#localizacao">Localização</a></li>
           </ul>
         </div>
 
