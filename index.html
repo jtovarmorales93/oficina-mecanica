@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR" class="dark" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,6 +67,39 @@
       padding: 0;
       box-sizing: border-box;
     }
+
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Alinea la imagen y el texto verticalmente al centro */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  gap: 12px; /* Controla el espacio horizontal entre la imagen y el texto */
+}
+
+.logo-image {
+  height: 100px; /* Ajusta la altura según el tamaño de tu menú */
+  width: auto;  /* Mantiene la proporción original de tu logotipo */
+  object-fit: contain;
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column; /* Mantiene el título arriba y el subtítulo abajo */
+}
+
+.logo-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  /* Añade aquí tus estilos de color y tipografía */
+}
+
+.logo-subtitle {
+  font-size: 0.8rem;
+  /* Añade aquí tus estilos de color y tipografía */
+}
+
+
+
 
     html {
       scroll-behavior: smooth;
@@ -145,6 +178,7 @@
     .text-center { text-align: center; }
     .text-gradient {
       background: linear-gradient(135deg, #FFFFFF 20%, var(--color-primary) 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -1057,15 +1091,15 @@
   <!-- 1. HEADER & NAVIGATION -->
   <header>
     <div class="container nav-wrapper">
-      <a href="#" class="logo-container" aria-label="Xancar Auto Center - Página Inicial">
-        <div class="logo-badge">
-          <i class="fa-solid fa-car-side"></i>
-        </div>
-        <div class="logo-text-group">
-          <span class="logo-title">XANCAR</span>
-          <span class="logo-subtitle">AUTO CENTER PREMIUM</span>
-        </div>
-      </a>
+     <a href="#" class="logo-container" aria-label="Xancar Auto Center - Página Inicial">
+  <!-- Se reemplazó el div del icono por la etiqueta de imagen -->
+  <img src="./img/logo-xancar-header.png" alt="Logotipo Xancar" class="logo-image">
+  
+  <div class="logo-text-group">
+    <span class="logo-title">XANCAR</span>
+    <span class="logo-subtitle">AUTO CENTER PREMIUM</span>
+  </div>
+</a>
 
       <!-- MENU NAVEGAÇÃO -->
       <ul class="nav-menu" id="nav-menu">
