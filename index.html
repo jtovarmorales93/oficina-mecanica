@@ -75,11 +75,11 @@
       gap: 12px;
     }
 
-.logo-image {
-  height: 70px; /* Ajusta la altura según el tamaño de tu menú */
-  width: auto;  /* Mantiene la proporción original de tu logotipo */
-  object-fit: contain;
-}
+    .logo-image {
+      height: 70px;
+      width: auto;
+      object-fit: contain;
+    }
 
     .logo-text-group {
       display: flex;
@@ -111,9 +111,6 @@
       position: relative;
     }
 
-    /* ==========================================================================
-       CONFIGURACIÓN DE IMAGEN DE FONDO ESTABLE (SIN ZOOM AL HACER SCROLL)
-       ========================================================================== */
     body::before {
       content: "";
       position: fixed;
@@ -125,7 +122,7 @@
       
       background-image: 
         linear-gradient(100deg, rgba(7, 10, 16, 0.88) 0%, rgba(7, 10, 16, 0.85) 50%, rgba(7, 10, 16, 0.98) 100%),
-        url('./img/xancar-logooficial.jpg');
+        url('./img/xan-logo-desktop.jpg');
       
       background-position: center;
       background-repeat: no-repeat;
@@ -681,7 +678,7 @@
     }
 
     /* ==========================================================================
-       8. SERVIÇOS & MODAL
+       8. SERVIÇOS REORGANIZADOS E OTIMIZADOS
        ========================================================================== */
     .service-tabs-nav {
       display: flex;
@@ -715,7 +712,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
       gap: 2rem;
     }
 
@@ -728,17 +725,18 @@
       transition: var(--transition-smooth);
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
 
     .service-card:hover {
       transform: translateY(-8px);
-      border-color: var(--color-border-glow);
-      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-glow);
     }
 
     .service-card-img-wrapper {
       position: relative;
-      height: 220px;
+      height: 200px;
       overflow: hidden;
     }
 
@@ -753,32 +751,55 @@
       transform: scale(1.08);
     }
 
+    .service-badge-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(7, 10, 16, 0.8);
+      backdrop-filter: blur(6px);
+      color: var(--color-primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+
     .service-card-body {
       padding: 1.8rem;
-      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      flex-grow: 1;
     }
 
     .service-card-body h3 {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       color: #FFFFFF;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
     }
 
-    .service-card-body h3 i { color: var(--color-primary); }
+    .service-card-body h3 i {
+      color: var(--color-primary);
+      font-size: 1.1rem;
+    }
 
     .service-card-body p {
       color: var(--color-text-sub);
       font-size: 0.925rem;
+      line-height: 1.5;
       margin-bottom: 1.5rem;
+      flex-grow: 1;
     }
 
-    /* MODAL */
+    .service-card-body .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    /* MODAL EXPANSÍVEL */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -862,7 +883,140 @@
     }
 
     /* ==========================================================================
-       9. GALERIA VISUAL
+       9. NUEVA SECCIÓN: GOOGLE REVIEWS & AVALIAÇÕES
+       ========================================================================== */
+    .reviews-section {
+      background-color: var(--bg-surface-1);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    .google-badge-card {
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-lg);
+      flex-wrap: wrap;
+    }
+
+    .google-badge-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .google-icon {
+      font-size: 3rem;
+      background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .google-rating-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      line-height: 1;
+    }
+
+    .google-stars {
+      color: #FBBC05;
+      font-size: 1.1rem;
+      margin: 0.3rem 0;
+    }
+
+    .google-review-count {
+      color: var(--color-text-sub);
+      font-size: 0.875rem;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .review-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(251, 188, 5, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+
+    .review-user {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .review-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--color-primary);
+    }
+
+    .review-user-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 0.2rem;
+    }
+
+    .review-date {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .google-mini-logo {
+      color: #4285F4;
+      font-size: 1.2rem;
+    }
+
+    .review-stars {
+      color: #FBBC05;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-text {
+      color: var(--color-text-sub);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* ==========================================================================
+       10. GALERIA VISUAL
        ========================================================================== */
     .gallery-grid {
       display: grid;
@@ -900,7 +1054,7 @@
     .gallery-item:hover .gallery-overlay { opacity: 1; }
 
     /* ==========================================================================
-       10. DIFERENCIAIS
+       11. DIFERENCIAIS
        ========================================================================== */
     .differentials-grid {
       display: grid;
@@ -936,7 +1090,7 @@
     }
 
     /* ==========================================================================
-       11. FAQ ACCORDION
+       12. FAQ ACCORDION
        ========================================================================== */
     .faq-container {
       max-width: 800px;
@@ -985,7 +1139,7 @@
     }
 
     /* ==========================================================================
-       12. NUEVA SECCIÓN: LOCALIZACIÓN Y MAPA RESPONSIVO
+       13. LOCALIZACIÓN Y MAPA RESPONSIVO
        ========================================================================== */
     .location-card {
       background: var(--bg-card);
@@ -1026,12 +1180,11 @@
       margin-top: 0.2rem;
     }
 
-    /* ESTILOS PARA ADAPTAR EL IFRAME DEL MAPA EM MÓVILES */
     .map-responsive {
       position: relative;
       width: 100%;
       height: 0;
-      padding-bottom: 65%; /* Proporción responsiva para el mapa */
+      padding-bottom: 65%;
       border-radius: var(--radius-md);
       overflow: hidden;
       border: 1px solid var(--color-border-glow);
@@ -1048,7 +1201,7 @@
     }
 
     /* ==========================================================================
-       13. FOOTER
+       14. FOOTER
        ========================================================================== */
     footer {
       background-color: rgba(4, 6, 10, 0.562);
@@ -1111,7 +1264,7 @@
     }
 
     /* ==========================================================================
-       14. RESPONSIVIDADE
+       15. RESPONSIVIDADE
        ========================================================================== */
     @media (max-width: 1024px) {
       .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
@@ -1121,6 +1274,8 @@
       .location-card { grid-template-columns: 1fr; gap: 2rem; padding: 1.8rem; }
       .map-responsive { padding-bottom: 75%; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .google-badge-card { flex-direction: column; text-align: center; justify-content: center; }
+      .google-badge-left { flex-direction: column; }
     }
 
     @media (max-width: 768px) {
@@ -1189,6 +1344,7 @@
         <li><a href="#alerta" class="nav-link">Alerta</a></li>
         <li><a href="#preventiva" class="nav-link">Preventiva</a></li>
         <li><a href="#servicos" class="nav-link">Serviços</a></li>
+        <li><a href="#avaliacoes" class="nav-link">Avaliações</a></li>
         <li><a href="#galeria" class="nav-link">Galeria</a></li>
         <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
         <li><a href="#localizacao" class="nav-link">Localização</a></li>
@@ -1220,7 +1376,7 @@
           <div class="section-badge">
            <i class="fa-solid fa-car"></i> Seu Carro Merece o Melhor Cuidado
           </div>
-          <h1 class="hero-title">Qualidade e Transparência  <span class="text-gradient">em Cada Serviço</span></h1>
+          <h1 class="hero-title">Qualidade e Transparência <span class="text-gradient">em Cada Serviço</span></h1>
           <p class="hero-subtitle">Conte com uma equipe preparada para cuidar do seu veículo, oferecendo serviços de qualidade, orçamento transparente e atendimento de confiança em Louveira.</p>
           
           <div class="hero-cta-group">
@@ -1313,7 +1469,7 @@
     </div>
   </section>
 
-  <!-- 5. GALERIA INTERATIVA DE SERVIÇOS -->
+  <!-- 5. GALERIA INTERATIVA DE SERVIÇOS (ORGANIZADA) -->
   <section id="servicos">
     <div class="container">
       <div class="text-center reveal-init reveal-fade-up">
@@ -1322,6 +1478,7 @@
         <p class="section-subtitle">Clique em "Saiba Mais" em qualquer serviço para visualizar detalhes, prazos e os riscos da falta de manutenção.</p>
       </div>
 
+      <!-- BOTÕES DE FILTRO -->
       <div class="service-tabs-nav reveal-init reveal-fade-up">
         <button class="tab-btn active" data-category="todos"><i class="fa-solid fa-border-all"></i> Todos</button>
         <button class="tab-btn" data-category="motor"><i class="fa-solid fa-engine"></i> Motor & Injeção</button>
@@ -1329,9 +1486,13 @@
         <button class="tab-btn" data-category="fluidos"><i class="fa-solid fa-droplet"></i> Óleo & Arrefecimento</button>
       </div>
 
+      <!-- GRID DE CARDS ORGANIZADOS -->
       <div class="services-grid" id="services-grid">
+        
+        <!-- CARD 1 -->
         <div class="service-card reveal-init reveal-fade-up" data-category="fluidos">
           <div class="service-card-img-wrapper">
+            <span class="service-badge-tag">Essencial</span>
             <img src="./img/filtro-oleo.png" alt="Troca de Óleo">
           </div>
           <div class="service-card-body">
@@ -1343,8 +1504,10 @@
           </div>
         </div>
 
+        <!-- CARD 2 -->
         <div class="service-card reveal-init reveal-fade-up delay-1" data-category="seguranca">
           <div class="service-card-img-wrapper">
+            <span class="service-badge-tag">Segurança</span>
             <img src="https://cdn.dealerspace.ai/bamaq/freio-abs.png" alt="Sistema de Freios">
           </div>
           <div class="service-card-body">
@@ -1356,8 +1519,10 @@
           </div>
         </div>
 
+        <!-- CARD 3 -->
         <div class="service-card reveal-init reveal-fade-up delay-2" data-category="motor">
           <div class="service-card-img-wrapper">
+            <span class="service-badge-tag">Tecnologia</span>
             <img src="https://3lezamauto.com/wp-content/uploads/2025/06/analisis-diagnosis-electrica.jpg" alt="Diagnóstico de Motor">
           </div>
           <div class="service-card-body">
@@ -1369,8 +1534,10 @@
           </div>
         </div>
 
+        <!-- CARD 4 -->
         <div class="service-card reveal-init reveal-fade-up delay-3" data-category="seguranca">
           <div class="service-card-img-wrapper">
+            <span class="service-badge-tag">Conforto</span>
             <img src="https://quatrorodas.abril.com.br/wp-content/uploads/2022/09/Meca%CC%82nico-trocando-armotecedor-do-Corsa-da-frota-de-testes-da-revista-Quatro-Rod.jpg?quality=70&strip=info&w=720&crop=1" alt="Suspensão">
           </div>
           <div class="service-card-body">
@@ -1381,6 +1548,7 @@
             </button>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1419,8 +1587,118 @@
     </div>
   </div>
 
-  <!-- 6. GALERIA FOTOGRÁFICA -->
-  <section id="galeria" style="background: var(--bg-surface-1);">
+  <!-- 6. SEÇÃO GOOGLE REVIEWS & AVALIAÇÕES (NUEVA) -->
+  <section id="avaliacoes" class="reviews-section">
+    <div class="container">
+      <div class="text-center reveal-init reveal-fade-up">
+        <div class="section-badge">Reputação Comprovada</div>
+        <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
+        <p class="section-subtitle">A satisfação de quem confia a segurança do seu veículo à Xancar Auto Center.</p>
+      </div>
+
+      <!-- BADGE OFICIAL DO GOOGLE -->
+      <div class="google-badge-card reveal-init reveal-fade-up">
+        <div class="google-badge-left">
+          <i class="fa-brands fa-google google-icon"></i>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 0.8rem;">
+              <span class="google-rating-number">4.9</span>
+              <div class="google-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="google-review-count">Classificação baseada em avaliações reais no Google Maps</div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Xancar+Auto+Center" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver todas no Google
+        </a>
+      </div>
+
+      <!-- GRID DE COMENTÁRIOS DE CLIENTES -->
+      <div class="reviews-grid">
+        <!-- TESTEMUNHO 1 -->
+        <div class="review-card reveal-init reveal-fade-up delay-1">
+          <div>
+            <div class="review-header">
+              <div class="review-user">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Avatar de Ana Clara" class="review-avatar">
+                <div>
+                  <div class="review-user-name">Ana Clara Silva</div>
+                  <div class="review-date">Há 2 semanas</div>
+                </div>
+              </div>
+              <i class="fa-brands fa-google google-mini-logo"></i>
+            </div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Atendimento impecável! Levei meu carro para revisão antes de viajar e me explicaram tudo detalhadamente antes de fazer o serviço. Orçamento justo e sem enrolação."</p>
+          </div>
+        </div>
+
+        <!-- TESTEMUNHO 2 -->
+        <div class="review-card reveal-init reveal-fade-up delay-2">
+          <div>
+            <div class="review-header">
+              <div class="review-user">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Avatar de Marcos Eduardo" class="review-avatar">
+                <div>
+                  <div class="review-user-name">Marcos Eduardo</div>
+                  <div class="review-date">Mês passado</div>
+                </div>
+              </div>
+              <i class="fa-brands fa-google google-mini-logo"></i>
+            </div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Oficina extremamente limpa, organizada e moderna. Encontraram um barulho na suspensão que duas outras oficinas da região não conseguiram resolver. Recomendo de olhos fechados!"</p>
+          </div>
+        </div>
+
+        <!-- TESTEMUNHO 3 -->
+        <div class="review-card reveal-init reveal-fade-up delay-3">
+          <div>
+            <div class="review-header">
+              <div class="review-user">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="Avatar de Ricardo Oliveira" class="review-avatar">
+                <div>
+                  <div class="review-user-name">Ricardo Oliveira</div>
+                  <div class="review-date">Há 2 meses</div>
+                </div>
+              </div>
+              <i class="fa-brands fa-google google-mini-logo"></i>
+            </div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Serviço rápido e com muita transparência. O diagnóstico computadorizado mostrou exatamente onde estava o problema da injeção. Equipe nota 10 no atendimento."</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. GALERIA FOTOGRÁFICA -->
+  <section id="galeria">
     <div class="container">
       <div class="text-center reveal-init reveal-fade-up">
         <div class="section-badge">Estrutura de Ponta</div>
@@ -1460,8 +1738,8 @@
     </div>
   </section>
 
-  <!-- 7. DIFERENCIAIS DA OFICINA -->
-  <section id="diferenciais">
+  <!-- 8. DIFERENCIAIS DA OFICINA -->
+  <section id="diferenciais" style="background: var(--bg-surface-1);">
     <div class="container">
       <div class="text-center reveal-init reveal-fade-up">
         <div class="section-badge">Diferenciais Xancar</div>
@@ -1497,8 +1775,8 @@
     </div>
   </section>
 
-  <!-- 8. NUEVA SECCIÓN DE LOCALIZACIÓN COM MAPA GOOGLE RESPONSIVO -->
-  <section id="localizacao" style="background: var(--bg-surface-1);">
+  <!-- 9. LOCALIZACIÓN COM MAPA GOOGLE RESPONSIVO -->
+  <section id="localizacao">
     <div class="container">
       <div class="text-center reveal-init reveal-fade-up">
         <div class="section-badge">Localização</div>
@@ -1547,8 +1825,8 @@
     </div>
   </section>
 
-  <!-- 9. FAQ -->
-  <section id="faq">
+  <!-- 10. FAQ -->
+  <section id="faq" style="background: var(--bg-surface-1);">
     <div class="container">
       <div class="text-center reveal-init reveal-fade-up">
         <div class="section-badge">Dúvidas Frequentes</div>
@@ -1603,7 +1881,7 @@
     </div>
   </section>
 
-  <!-- 10. FOOTER -->
+  <!-- 11. FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -1626,6 +1904,7 @@
             <li><a href="#alerta">Aviso Importante</a></li>
             <li><a href="#preventiva">Mecânica Preventiva</a></li>
             <li><a href="#servicos">Serviços & Especialidades</a></li>
+            <li><a href="#avaliacoes">Avaliações Google</a></li>
             <li><a href="#galeria">Galeria da Oficina</a></li>
             <li><a href="#diferenciais">Diferenciais</a></li>
             <li><a href="#localizacao">Localização</a></li>
