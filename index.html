@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark" >
+<html lang="pt-BR" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Xancar Auto Center - Centro Automotivo Premium. Diagnóstico computadorizado, mecânica preventiva e corretiva, revisão completa, freios, suspensão, troca de óleo e injeção com tecnologia de ponta e transparência total.">
+  <meta name="description"
+    content="Xancar Auto Center - Centro Automotivo Premium. Diagnóstico computadorizado, mecânica preventiva e corretiva, revisão completa, freios, suspensão, troca de óleo e injeção com tecnologia de ponta e transparência total.">
   <meta name="theme-color" content="#090D16">
   <title>Xancar Auto Center | Centro Automotivo Premium & Manutenção de Alta Precisão</title>
 
   <!-- Open Graph / Meta SEO -->
   <meta property="og:title" content="Xancar Auto Center | Centro Automotivo Premium">
-  <meta property="og:description" content="Engenharia automotiva de precisão, manutenção preventiva e diagnósticos computadorizados com transparência total.">
+  <meta property="og:description"
+    content="Engenharia automotiva de precisão, manutenção preventiva e diagnósticos computadorizados com transparência total.">
   <meta property="og:type" content="website">
 
   <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -28,17 +33,19 @@
       --bg-surface-2: rgba(19, 28, 49, 0.9);
       --bg-card: rgba(24, 35, 60, 0.85);
       --bg-card-hover: rgba(30, 45, 77, 0.95);
-      
-      --color-primary: #F97316;       /* Laranja Automotivo Esportivo */
+
+      --color-primary: #F97316;
+      /* Laranja Automotivo Esportivo */
       --color-primary-hover: #EA580C;
       --color-primary-glow: rgba(249, 115, 22, 0.3);
-      
-      --color-whatsapp: #25D366;      /* Verde Oficial WhatsApp */
+
+      --color-whatsapp: #25D366;
+      /* Verde Oficial WhatsApp */
       --color-whatsapp-hover: #20BA5A;
       --color-whatsapp-glow: rgba(37, 211, 102, 0.35);
 
       --color-cyan: #38BDF8;
-      
+
       --color-text-main: #F8FAFC;
       --color-text-sub: #94A3B8;
       --color-text-muted: #64748B;
@@ -51,7 +58,7 @@
       --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
       --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
       --shadow-glow: 0 0 30px rgba(249, 115, 22, 0.2);
-      
+
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 24px;
@@ -62,7 +69,9 @@
     }
 
     /* Reset & Base */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -119,11 +128,11 @@
       width: 100vw;
       height: 100vh;
       z-index: -1;
-      
-      background-image: 
+
+      background-image:
         linear-gradient(100deg, rgba(7, 10, 16, 0.88) 0%, rgba(7, 10, 16, 0.85) 50%, rgba(7, 10, 16, 0.98) 100%),
         url('./img/xan-logo-desktop.jpg');
-      
+
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -132,10 +141,10 @@
 
     @media (max-width: 768px) {
       body::before {
-        background-image: 
+        background-image:
           linear-gradient(100deg, rgba(7, 10, 16, 0.88) 0%, rgba(7, 10, 16, 0.85) 50%, rgba(7, 10, 16, 0.98) 100%),
           url('./img/xancar-logooficial.jpg');
-          
+
         background-position: center;
         background-size: cover;
       }
@@ -154,7 +163,12 @@
     }
 
     /* Typography */
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: var(--font-heading);
       letter-spacing: -0.02em;
     }
@@ -191,7 +205,10 @@
       text-align: center;
     }
 
-    .text-center { text-align: center; }
+    .text-center {
+      text-align: center;
+    }
+
     .text-gradient {
       background: linear-gradient(135deg, #FFFFFF 20%, var(--color-primary) 100%);
       background-clip: text;
@@ -208,20 +225,42 @@
       will-change: transform, opacity;
     }
 
-    .reveal-fade-up { transform: translateY(40px); }
-    .reveal-fade-left { transform: translateX(-40px); }
-    .reveal-fade-right { transform: translateX(40px); }
-    .reveal-zoom-in { transform: scale(0.92); }
+    .reveal-fade-up {
+      transform: translateY(40px);
+    }
+
+    .reveal-fade-left {
+      transform: translateX(-40px);
+    }
+
+    .reveal-fade-right {
+      transform: translateX(40px);
+    }
+
+    .reveal-zoom-in {
+      transform: scale(0.92);
+    }
 
     .reveal-active {
       opacity: 1 !important;
       transform: translateY(0) translateX(0) scale(1) !important;
     }
 
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
+    .delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .delay-4 {
+      transition-delay: 0.4s;
+    }
 
     /* ==========================================================================
        3. COMPONENTES E BOTÕES
@@ -262,7 +301,9 @@
       transition: 0.6s ease;
     }
 
-    .btn-whatsapp:hover::after { left: 130%; }
+    .btn-whatsapp:hover::after {
+      left: 130%;
+    }
 
     .btn-whatsapp:hover {
       background: var(--color-whatsapp-hover);
@@ -325,9 +366,17 @@
     }
 
     @keyframes pulse-green {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
     }
 
     /* ==========================================================================
@@ -413,7 +462,9 @@
       position: relative;
     }
 
-    .nav-link:hover { color: var(--color-primary); }
+    .nav-link:hover {
+      color: var(--color-primary);
+    }
 
     .nav-link::after {
       content: '';
@@ -426,7 +477,9 @@
       transition: var(--transition-fast);
     }
 
-    .nav-link:hover::after { width: 100%; }
+    .nav-link:hover::after {
+      width: 100%;
+    }
 
     .header-actions {
       display: flex;
@@ -495,8 +548,14 @@
       font-family: var(--font-heading);
     }
 
-    .stat-number span { color: var(--color-primary); }
-    .stat-label { font-size: 0.85rem; color: var(--color-text-muted); }
+    .stat-number span {
+      color: var(--color-primary);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
 
     .hero-image-wrapper {
       position: relative;
@@ -515,7 +574,9 @@
       transition: var(--transition-smooth);
     }
 
-    .hero-image-wrapper:hover img { transform: scale(1.04); }
+    .hero-image-wrapper:hover img {
+      transform: scale(1.04);
+    }
 
     .hero-floating-card {
       position: absolute;
@@ -703,7 +764,8 @@
       gap: 0.5rem;
     }
 
-    .tab-btn:hover, .tab-btn.active {
+    .tab-btn:hover,
+    .tab-btn.active {
       background: var(--color-primary);
       color: #FFFFFF;
       border-color: var(--color-primary);
@@ -837,7 +899,9 @@
       transition: var(--transition-smooth);
     }
 
-    .modal-overlay.active .modal-content { transform: scale(1); }
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
 
     .modal-close {
       position: absolute;
@@ -857,7 +921,9 @@
       transition: var(--transition-fast);
     }
 
-    .modal-close:hover { background: var(--color-primary); }
+    .modal-close:hover {
+      background: var(--color-primary);
+    }
 
     .modal-grid {
       display: grid;
@@ -919,8 +985,8 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-       
-    
+
+
     }
 
     .google-rating-number {
@@ -1053,8 +1119,13 @@
       transition: var(--transition-smooth);
     }
 
-    .gallery-item:hover img { transform: scale(1.1); }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
 
     /* ==========================================================================
        11. DIFERENCIAIS
@@ -1135,7 +1206,10 @@
       transition: max-height 0.35s ease, padding 0.35s ease;
     }
 
-    .faq-item.active .faq-header i { transform: rotate(180deg); }
+    .faq-item.active .faq-header i {
+      transform: rotate(180deg);
+    }
+
     .faq-item.active .faq-body {
       padding: 0 1.5rem 1.5rem 1.5rem;
       max-height: 300px;
@@ -1238,15 +1312,24 @@
       background: var(--color-primary);
     }
 
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 0.75rem; }
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
     .footer-links a {
       color: var(--color-text-muted);
       text-decoration: none;
       font-size: 0.9rem;
       transition: var(--transition-fast);
     }
-    .footer-links a:hover { color: var(--color-primary); }
+
+    .footer-links a:hover {
+      color: var(--color-primary);
+    }
 
     .footer-bottom {
       border-top: 1px solid var(--color-border);
@@ -1270,20 +1353,61 @@
        15. RESPONSIVIDADE
        ========================================================================== */
     @media (max-width: 1024px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
-      .hero-subtitle { margin-left: auto; margin-right: auto; }
-      .hero-cta-group { justify-content: center; }
-      .alert-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
-      .location-card { grid-template-columns: 1fr; gap: 2rem; padding: 1.8rem; }
-      .map-responsive { padding-bottom: 75%; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-      .google-badge-card { flex-direction: column; text-align: center; justify-content: center; }
-      .google-badge-left { flex-direction: column; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+
+      .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-cta-group {
+        justify-content: center;
+      }
+
+      .alert-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      .location-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.8rem;
+      }
+
+      .map-responsive {
+        padding-bottom: 75%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+
+      .google-badge-card {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .google-badge-left {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 768px) {
-      section { padding: 4rem 0; }
-      .mobile-toggle { display: block; }
+      section {
+        padding: 4rem 0;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
 
       .nav-menu {
         position: fixed;
@@ -1300,33 +1424,52 @@
         z-index: 999;
       }
 
-      .nav-menu.active { transform: translateY(0); }
+      .nav-menu.active {
+        transform: translateY(0);
+      }
 
-      .header-actions .btn-whatsapp span { display: none; }
+      .header-actions .btn-whatsapp span {
+        display: none;
+      }
+
       .header-actions .btn-whatsapp {
         padding: 0.6rem 0.9rem;
         font-size: 1.1rem;
       }
 
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .modal-grid { grid-template-columns: 1fr; }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 375px) {
-      .container { padding: 0 1rem; }
-      .hero-stats { grid-template-columns: 1fr; gap: 1rem; }
+      .container {
+        padding: 0 1rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20revis%C3%A3o." 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     class="whatsapp-float" 
-     aria-label="Atendimento via WhatsApp">
+  <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20revis%C3%A3o."
+    target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Atendimento via WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -1335,10 +1478,10 @@
     <div class="container nav-wrapper">
       <a href="#" class="logo-container" aria-label="Xancar Auto Center - Página Inicial">
         <img src="./img/logo-xancar-header.png" alt="Logotipo Xancar" class="logo-image">
-        
+
         <div class="logo-text-group">
           <span class="logo-title">XANCAR</span>
-          <span class="logo-subtitle">AUTO CENTER PREMIUM</span>
+          <span class="logo-subtitle">AUTO CENTER</span>
         </div>
       </a>
 
@@ -1356,10 +1499,8 @@
 
       <!-- BOTÃO HEADER -->
       <div class="header-actions">
-        <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20servi%C3%A7o." 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="btn btn-whatsapp">
+        <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20servi%C3%A7o."
+          target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
           <span>Agendar no WhatsApp</span>
         </a>
@@ -1377,13 +1518,15 @@
       <div class="hero-grid">
         <div class="hero-content reveal-init reveal-fade-right">
           <div class="section-badge">
-           <i class="fa-solid fa-car"></i> Seu Carro Merece o Melhor Cuidado
+            <i class="fa-solid fa-car"></i> Seu Carro Merece o Melhor Cuidado
           </div>
-          <h1 class="hero-title">Qualidade e Transparência <span class="text-gradient">em Cada Serviço</span></h1>
-          <p class="hero-subtitle">Conte com uma equipe preparada para cuidar do seu veículo, oferecendo serviços de qualidade, orçamento transparente e atendimento de confiança em Louveira.</p>
-          
+          <h1 class="hero-title">A melhor oficina <span class="text-gradient">da região para o seu veiculo</span></h1>
+          <p class="hero-subtitle">Conte com uma equipe preparada para cuidar do seu veículo, oferecendo serviços de
+            qualidade, orçamento transparente e atendimento de confiança em Louveira.</p>
+
           <div class="hero-cta-group">
-            <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large">
+            <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank"
+              rel="noopener noreferrer" class="btn btn-whatsapp btn-large">
               <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento Rápido
             </a>
             <a href="#servicos" class="btn btn-outline btn-large">
@@ -1408,12 +1551,15 @@
         </div>
 
         <div class="hero-image-wrapper reveal-init reveal-zoom-in">
-          <img src="https://www.lojadomecanico.com.br/blog/wp-content/uploads/2025/10/imagem-scanner-automotivo-profissional-diagnostico-completo-para-carro.png" alt="Oficina Mecânica Xancar">
+          <img
+            src="https://www.lojadomecanico.com.br/blog/wp-content/uploads/2025/10/imagem-scanner-automotivo-profissional-diagnostico-completo-para-carro.png"
+            alt="Oficina Mecânica Xancar">
           <div class="hero-floating-card">
             <i class="fa-solid fa-microchip"></i>
             <div>
               <strong style="color: white; display: block; font-size: 0.95rem;">Diagnóstico via Scanner</strong>
-              <span style="color: var(--color-text-sub); font-size: 0.8rem;">Detecção precisa de falhas eletrônicas</span>
+              <span style="color: var(--color-text-sub); font-size: 0.8rem;">Detecção precisa de falhas
+                eletrônicas</span>
             </div>
           </div>
         </div>
@@ -1427,8 +1573,10 @@
       <div class="alert-card reveal-init reveal-fade-up">
         <div class="alert-text">
           <h2>Aquele "barulhinho bobo" pode custar caro</h2>
-          <p>Ignorar pequenos barulhos no motor, freio ou suspensão é o primeiro passo para um prejuízo financeiro gigantesco no futuro.</p>
-          <p>Pior do que o custo do guincho é ter a viagem com a sua família interrompida no meio da estrada por conta de uma quebra imprevisível.</p>
+          <p>Ignorar pequenos barulhos no motor, freio ou suspensão é o primeiro passo para um prejuízo financeiro
+            gigantesco no futuro.</p>
+          <p>Pior do que o custo do guincho é ter a viagem com a sua família interrompida no meio da estrada por conta
+            de uma quebra imprevisível.</p>
           <div class="alert-box">
             <strong>Evite dores de cabeça!</strong>
             A manutenção preventiva é sempre mais barata, rápida e segura do que a manutenção corretiva emergencial.
@@ -1447,26 +1595,30 @@
       <div class="text-center reveal-init reveal-fade-up">
         <div class="section-badge">Manutenção Inteligente</div>
         <h2 class="section-title">Por que Escolher a Mecânica Preventiva?</h2>
-        <p class="section-subtitle">A manutenção planejada protege seu orçamento e evita que falhas simples se tornem grandes prejuízos.</p>
+        <p class="section-subtitle">A manutenção planejada protege seu orçamento e evita que falhas simples se tornem
+          grandes prejuízos.</p>
       </div>
 
       <div class="grid-3">
         <div class="feature-card reveal-init reveal-fade-up delay-1">
           <div class="feature-icon-box"><i class="fa-solid fa-piggy-bank"></i></div>
           <h3>Economia de Até 70%</h3>
-          <p>A substituição preventiva de componentes no prazo recomendado custa uma fração do valor de reparos emergenciais em motores e transmissões danificados.</p>
+          <p>A substituição preventiva de componentes no prazo recomendado custa uma fração do valor de reparos
+            emergenciais em motores e transmissões danificados.</p>
         </div>
 
         <div class="feature-card reveal-init reveal-fade-up delay-2">
           <div class="feature-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
           <h3>Segurança em Primeiro Lugar</h3>
-          <p>Freios regulados, suspensão firme e pneus alinhados garantem estabilidade total em frenagens bruscas e pistas molhadas.</p>
+          <p>Freios regulados, suspensão firme e pneus alinhados garantem estabilidade total em frenagens bruscas e
+            pistas molhadas.</p>
         </div>
 
         <div class="feature-card reveal-init reveal-fade-up delay-3">
           <div class="feature-icon-box"><i class="fa-solid fa-gas-pump"></i></div>
           <h3>Eficiência de Combustível</h3>
-          <p>Injeção eletrônica calibrada e filtros limpos reduzem drasticamente o consumo de combustível e a emissão de poluentes.</p>
+          <p>Injeção eletrônica calibrada e filtros limpos reduzem drasticamente o consumo de combustível e a emissão de
+            poluentes.</p>
         </div>
       </div>
     </div>
@@ -1478,7 +1630,8 @@
       <div class="text-center reveal-init reveal-fade-up">
         <div class="section-badge">Especialidades Xancar</div>
         <h2 class="section-title">Serviços Automotivos de Alta Precisão</h2>
-        <p class="section-subtitle">Clique em "Saiba Mais" em qualquer serviço para visualizar detalhes, prazos e os riscos da falta de manutenção.</p>
+        <p class="section-subtitle">Clique em "Saiba Mais" em qualquer serviço para visualizar detalhes, prazos e os
+          riscos da falta de manutenção.</p>
       </div>
 
       <!-- BOTÕES DE FILTRO -->
@@ -1486,12 +1639,13 @@
         <button class="tab-btn active" data-category="todos"><i class="fa-solid fa-border-all"></i> Todos</button>
         <button class="tab-btn" data-category="motor"><i class="fa-solid fa-engine"></i> Motor & Injeção</button>
         <button class="tab-btn" data-category="seguranca"><i class="fa-solid fa-shield"></i> Freios & Suspensão</button>
-        <button class="tab-btn" data-category="fluidos"><i class="fa-solid fa-droplet"></i> Óleo & Arrefecimento</button>
+        <button class="tab-btn" data-category="fluidos"><i class="fa-solid fa-droplet"></i> Óleo &
+          Arrefecimento</button>
       </div>
 
       <!-- GRID DE CARDS ORGANIZADOS -->
       <div class="services-grid" id="services-grid">
-        
+
         <!-- CARD 1 -->
         <div class="service-card reveal-init reveal-fade-up" data-category="fluidos">
           <div class="service-card-img-wrapper">
@@ -1526,7 +1680,8 @@
         <div class="service-card reveal-init reveal-fade-up delay-2" data-category="motor">
           <div class="service-card-img-wrapper">
             <span class="service-badge-tag">Tecnologia</span>
-            <img src="https://3lezamauto.com/wp-content/uploads/2025/06/analisis-diagnosis-electrica.jpg" alt="Diagnóstico de Motor">
+            <img src="https://3lezamauto.com/wp-content/uploads/2025/06/analisis-diagnosis-electrica.jpg"
+              alt="Diagnóstico de Motor">
           </div>
           <div class="service-card-body">
             <h3><i class="fa-solid fa-microchip"></i> Diagnóstico Eletrônico</h3>
@@ -1541,7 +1696,9 @@
         <div class="service-card reveal-init reveal-fade-up delay-3" data-category="seguranca">
           <div class="service-card-img-wrapper">
             <span class="service-badge-tag">Conforto</span>
-            <img src="https://quatrorodas.abril.com.br/wp-content/uploads/2022/09/Meca%CC%82nico-trocando-armotecedor-do-Corsa-da-frota-de-testes-da-revista-Quatro-Rod.jpg?quality=70&strip=info&w=720&crop=1" alt="Suspensão">
+            <img
+              src="https://quatrorodas.abril.com.br/wp-content/uploads/2022/09/Meca%CC%82nico-trocando-armotecedor-do-Corsa-da-frota-de-testes-da-revista-Quatro-Rod.jpg?quality=70&strip=info&w=720&crop=1"
+              alt="Suspensão">
           </div>
           <div class="service-card-body">
             <h3><i class="fa-solid fa-car-side"></i> Suspensão & Amortecedores</h3>
@@ -1561,7 +1718,8 @@
     <div class="modal-content">
       <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
       <h3 id="modal-title" style="font-size: 1.8rem; color: #FFF; margin-bottom: 0.5rem;">Título do Serviço</h3>
-      <p id="modal-desc" style="color: var(--color-text-sub); font-size: 1rem; margin-bottom: 1.5rem;">Descrição detalhada...</p>
+      <p id="modal-desc" style="color: var(--color-text-sub); font-size: 1rem; margin-bottom: 1.5rem;">Descrição
+        detalhada...</p>
 
       <div class="modal-grid">
         <div class="modal-info-box">
@@ -1575,16 +1733,19 @@
       </div>
 
       <div style="margin-bottom: 1.5rem;">
-        <h4 style="color: #FFF; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--color-whatsapp);"></i> Benefícios Principais</h4>
+        <h4 style="color: #FFF; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check"
+            style="color: var(--color-whatsapp);"></i> Benefícios Principais</h4>
         <p id="modal-benefits" style="color: var(--color-text-sub); font-size: 0.95rem;"></p>
       </div>
 
       <div style="margin-bottom: 2rem;">
-        <h4 style="color: #FFF; margin-bottom: 0.5rem;"><i class="fa-solid fa-triangle-exclamation" style="color: #EF4444;"></i> Riscos de Não Fazer</h4>
+        <h4 style="color: #FFF; margin-bottom: 0.5rem;"><i class="fa-solid fa-triangle-exclamation"
+            style="color: #EF4444;"></i> Riscos de Não Fazer</h4>
         <p id="modal-risks" style="color: var(--color-text-sub); font-size: 0.95rem;"></p>
       </div>
 
-      <a id="modal-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large" style="width: 100%;">
+      <a id="modal-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large"
+        style="width: 100%;">
         <i class="fa-brands fa-whatsapp"></i> Agendar Este Serviço Agora
       </a>
     </div>
@@ -1596,7 +1757,7 @@
       <div class="text-center reveal-init reveal-fade-up">
         <div class="section-badge">Reputação Comprovada</div>
         <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
-        <p class="section-subtitle">A satisfação de quem confia a segurança do seu veículo à Xancar Auto Center.</p>
+        <p class="section-subtitle">A satisfação de quem confia a segurança do seu veículo à Xancar Auto Center <strong style="color: rgb(207, 204, 38);"> <br> é o que nos move todos os dias  💫. </strong> </p>
       </div>
 
       <!-- BADGE OFICIAL DO GOOGLE -->
@@ -1617,7 +1778,8 @@
             <div class="google-review-count">Classificação baseada em avaliações reais no Google Maps</div>
           </div>
         </div>
-        <a href="https://maps.google.com/?q=Xancar+Auto+Center" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+        <a href="https://maps.google.com/?q=Xancar+Auto+Center" target="_blank" rel="noopener noreferrer"
+          class="btn btn-outline">
           <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver todas no Google
         </a>
       </div>
@@ -1629,9 +1791,10 @@
           <div>
             <div class="review-header">
               <div class="review-user">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Avatar de Ana Clara" class="review-avatar">
+                <img src="https://i.pinimg.com/736x/84/19/ba/8419baa21ac615f1e1abfd5b0e4bd543.jpg"
+                  alt="Avatar de Ana Clara" class="review-avatar">
                 <div>
-                  <div class="review-user-name">Ana Clara Silva</div>
+                  <div class="review-user-name">Ana dos Santos</div>
                   <div class="review-date">Há 2 semanas</div>
                 </div>
               </div>
@@ -1644,7 +1807,8 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <p class="review-text">"Atendimento impecável! Levei meu carro para revisão antes de viajar e me explicaram tudo detalhadamente antes de fazer o serviço. Orçamento justo e sem enrolação."</p>
+            <p class="review-text">"Atendimento impecável! Levei meu carro para revisão antes de viajar e me explicaram
+              tudo detalhadamente antes de fazer o serviço. Orçamento justo e sem enrolação."</p>
           </div>
         </div>
 
@@ -1653,9 +1817,10 @@
           <div>
             <div class="review-header">
               <div class="review-user">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Avatar de Marcos Eduardo" class="review-avatar">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjq7rn19cpKvRDLnEC1YxzwZE6l8TqcJ61HK0H1ciRxnq8xc0_J2pBPUg&s=10"
+                  alt="Avatar de Marcos Eduardo" class="review-avatar">
                 <div>
-                  <div class="review-user-name">Marcos Eduardo</div>
+                  <div class="review-user-name">Antônio de Oliveira </div>
                   <div class="review-date">Mês passado</div>
                 </div>
               </div>
@@ -1668,18 +1833,92 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <p class="review-text">"Oficina extremamente limpa, organizada e moderna. Encontraram um barulho na suspensão que duas outras oficinas da região não conseguiram resolver. Recomendo de olhos fechados!"</p>
+            <p class="review-text">" melhor atendimento que ja tive , transparência em tudo recomendo!"</p>
           </div>
         </div>
+
+        <div class="review-card reveal-init reveal-fade-up delay-2">
+          <div>
+            <div class="review-header">
+              <div class="review-user">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4Kz-MxoaMeJAwgzZDjb2tpY8I9FnK5zYLsCHOw8CcqAMFCIi9sdZqZlp3&s=10"
+                  alt="Avatar de Marcos Eduardo" class="review-avatar">
+                <div>
+                  <div class="review-user-name">Pedro Ferreira</div>
+                  <div class="review-date">Mês passado</div>
+                </div>
+              </div>
+              <i class="fa-brands fa-google google-mini-logo"></i>
+            </div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"levei meu jeta pra colocar pneus e roda nova . fiz balancamento e alinhamento . ficou zerado🤙🏼 atendimento muito agradavel"</p>
+          </div>
+        </div>
+
+<div class="review-card reveal-init reveal-fade-up delay-2">
+          <div>
+            <div class="review-header">
+              <div class="review-user">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUyI9948FmSmAejon1ubjQdcHlIq7RTCfn4YVpn85C3bcoKZps9kLITDE&s=10"
+                  alt="Avatar de Marcos Eduardo" class="review-avatar">
+                <div>
+                  <div class="review-user-name">Luiz Alves </div>
+                  <div class="review-date">Mês passado</div>
+                </div>
+              </div>
+              <i class="fa-brands fa-google google-mini-logo"></i>
+            </div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">" eu recomendo muito xancar eles tem um atendimento diferenciado mesmo . tudo na maior  transparência honestidade sempre pela frente "</p>
+          </div>
+        </div>
+
+<div class="review-card reveal-init reveal-fade-up delay-2">
+          <div>
+            <div class="review-header">
+              <div class="review-user">
+                <img src="https://images.unsplash.com/photo-1663180048674-1632c8712919?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
+                  alt="Avatar de Marcos Eduardo" class="review-avatar">
+                <div>
+                  <div class="review-user-name">Marcos leme</div>
+                  <div class="review-date">Mês passado</div>
+                </div>
+              </div>
+              <i class="fa-brands fa-google google-mini-logo"></i>
+            </div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"fiz motor do meu gol completo . ganhou minha confiança o carro ficou novo , eu recomendo de olhos fechados "</p>
+          </div>
+        </div>
+
 
         <!-- TESTEMUNHO 3 -->
         <div class="review-card reveal-init reveal-fade-up delay-3">
           <div>
             <div class="review-header">
               <div class="review-user">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80" alt="Avatar de Ricardo Oliveira" class="review-avatar">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDeuUFSkZygI9rOm4MmzxFfm4HBeGUuHtghHqzXBHAmirb5HxpPDw19Mw&s=10"
+                  alt="Avatar de Ricardo Oliveira" class="review-avatar">
                 <div>
-                  <div class="review-user-name">Ricardo Oliveira</div>
+                  <div class="review-user-name">Júlia de Souza</div>
                   <div class="review-date">Há 2 meses</div>
                 </div>
               </div>
@@ -1692,10 +1931,11 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <p class="review-text">"Serviço rápido e com muita transparência. O diagnóstico computadorizado mostrou exatamente onde estava o problema da injeção. Equipe nota 10 no atendimento."</p>
+            <p class="review-text">"Serviço rápido e com muita transparência.  Equipe nota 10 no atendimento."</p>
           </div>
         </div>
       </div>
+    </div>
 
     </div>
   </section>
@@ -1718,21 +1958,27 @@
         </div>
 
         <div class="gallery-item reveal-init reveal-zoom-in delay-1">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqmtR0D5uubnZv8cTTfAPo-u79YeMT1PS8uMMok-xI3K3nHbQI0vQVEEb&s=10" alt="Troca de óleo">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqmtR0D5uubnZv8cTTfAPo-u79YeMT1PS8uMMok-xI3K3nHbQI0vQVEEb&s=10"
+            alt="Troca de óleo">
           <div class="gallery-overlay">
             <span style="color: white; font-weight: 700;">Troca de Óleo Especializada</span>
           </div>
         </div>
 
         <div class="gallery-item reveal-init reveal-zoom-in delay-2">
-          <img src="https://www.c3carecarcenter.com/wp-content/uploads/2025/05/Descubre-el-funcionamiento-esencial-de-los-frenos-antibloqueo-ABS-1038x576.webp" alt="Manutenção de Freios">
+          <img
+            src="https://www.c3carecarcenter.com/wp-content/uploads/2025/05/Descubre-el-funcionamiento-esencial-de-los-frenos-antibloqueo-ABS-1038x576.webp"
+            alt="Manutenção de Freios">
           <div class="gallery-overlay">
             <span style="color: white; font-weight: 700;">Revisão de Freios ABS</span>
           </div>
         </div>
 
         <div class="gallery-item reveal-init reveal-zoom-in delay-3">
-          <img src="https://a-static.mlcdn.com.br/420x420/kit-ferramenta-sincronismo-motor-fiat-firefly-1-0-1-3-uno-mobi-argo-travamento-comando-valvulas-arvore-manivelas-manutencao-motor-feron/feronferramentas/fo003/921c45bbe0e86ef0536bbfe79dd1d89d.jpeg" alt="Motor e Injeção">
+          <img
+            src="https://a-static.mlcdn.com.br/420x420/kit-ferramenta-sincronismo-motor-fiat-firefly-1-0-1-3-uno-mobi-argo-travamento-comando-valvulas-arvore-manivelas-manutencao-motor-feron/feronferramentas/fo003/921c45bbe0e86ef0536bbfe79dd1d89d.jpeg"
+            alt="Motor e Injeção">
           <div class="gallery-overlay">
             <span style="color: white; font-weight: 700;">Sincronismo e Motor</span>
           </div>
@@ -1815,14 +2061,18 @@
             </li>
           </ul>
 
-          <a href="https://maps.google.com/?q=Xancar+Auto+Center" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
+          <a href="https://maps.google.com/?q=Xancar+Auto+Center" target="_blank" rel="noopener noreferrer"
+            class="btn btn-primary" style="width: 100%;">
             <i class="fa-solid fa-route"></i> Abrir no GPS / Google Maps
           </a>
         </div>
 
         <!-- CONTENEDOR RESPONSIVO DEL MAPA -->
         <div class="map-responsive">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5266.498803584645!2d-46.98272462630092!3d-23.086095344300762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2df887699aef%3A0x42ed0fec98f4a936!2sXancar%20Auto%20Center!5e1!3m2!1ses-419!2sbr!4v1785338874783!5m2!1ses-419!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5266.498803584645!2d-46.98272462630092!3d-23.086095344300762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2df887699aef%3A0x42ed0fec98f4a936!2sXancar%20Auto%20Center!5e1!3m2!1ses-419!2sbr!4v1785338874783!5m2!1ses-419!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
     </div>
@@ -1844,7 +2094,8 @@
             <i class="fa-solid fa-chevron-down"></i>
           </div>
           <div class="faq-body">
-            Recomendamos a revisão a cada 10.000 km ou a cada 12 meses, o que ocorrer primeiro. Isso garante a identificação precoce de desgastes.
+            Recomendamos a revisão a cada 10.000 km ou a cada 12 meses, o que ocorrer primeiro. Isso garante a
+            identificação precoce de desgastes.
           </div>
         </div>
 
@@ -1854,7 +2105,8 @@
             <i class="fa-solid fa-chevron-down"></i>
           </div>
           <div class="faq-body">
-            Para sua maior comodidade e atendimento sem filas, recomendamos o agendamento prévio via WhatsApp. Porém, atendemos emergências pontuais conforme a disponibilidade da oficina.
+            Para sua maior comodidade e atendimento sem filas, recomendamos o agendamento prévio via WhatsApp. Porém,
+            atendemos emergências pontuais conforme a disponibilidade da oficina.
           </div>
         </div>
 
@@ -1872,13 +2124,15 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section style="background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.18) 0%, rgba(7, 10, 16, 0.95) 80%); text-align: center;">
+  <section
+    style="background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.18) 0%, rgba(7, 10, 16, 0.95) 80%); text-align: center;">
     <div class="container reveal-init reveal-zoom-in">
       <h2 style="font-size: 2.5rem; color: #FFF; margin-bottom: 1rem;">Pronto para Cuidar do seu Veículo?</h2>
       <p style="color: var(--color-text-sub); max-width: 600px; margin: 0 auto 2.5rem auto;">
         Entre em contato agora mesmo via WhatsApp e agende seu diagnóstico com nossos especialistas.
       </p>
-      <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Quero%20agendar%20minha%20revis%C3%A3o%20agora." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large">
+      <a href="https://wa.me/5519982689134?text=Ol%C3%A1!%20Quero%20agendar%20minha%20revis%C3%A3o%20agora."
+        target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large">
         <i class="fa-brands fa-whatsapp"></i> Agendar Revisão pelo WhatsApp
       </a>
     </div>
@@ -1898,7 +2152,8 @@
               <span class="logo-subtitle">AUTO CENTER PREMIUM</span>
             </div>
           </a>
-          <p style="margin-top: 1.2rem; font-size: 0.9rem;">Sua oficina de mecânica de alta precisão em Louveira. Transparência, tecnologia avançada e segurança para o seu veículo.</p>
+          <p style="margin-top: 1.2rem; font-size: 0.9rem;">Sua oficina de mecânica de alta precisão em Louveira.
+            Transparência, tecnologia avançada e segurança para o seu veículo.</p>
         </div>
 
         <div class="footer-column">
@@ -1916,21 +2171,24 @@
 
         <div class="footer-column">
           <h4>Funcionamento</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><strong style="color: #fff;">Segunda a Sexta:</strong> 08:00h às 18:00h</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><strong style="color: #fff;">Segunda a Sexta:</strong>
+            08:00h às 18:00h</p>
           <p style="font-size: 0.9rem;"><strong style="color: #fff;">Sábado:</strong> 08:00h às 12:00h</p>
         </div>
 
         <div class="footer-column">
           <h4>Contato</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot" style="color: var(--color-primary);"></i> Louveira - SP</p>
-          <p style="font-size: 0.9rem;"><i class="fa-solid fa-phone" style="color: var(--color-primary);"></i> (19) 98268-9134</p>
+          <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot"
+              style="color: var(--color-primary);"></i> Louveira - SP</p>
+          <p style="font-size: 0.9rem;"><i class="fa-solid fa-phone" style="color: var(--color-primary);"></i> (19)
+            98268-9134</p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>&copy; <span id="current-year"></span> Xancar Auto Center. Todos os direitos reservados.</div>
         <div>
-          Desenvolvido por 
+          Desenvolvido por
           <a href="https://tovartechnology.vercel.app/" target="_blank" rel="noopener noreferrer" class="tovar-link">
             Tovar Technology <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
           </a>
@@ -2065,4 +2323,5 @@
     });
   </script>
 </body>
+
 </html>
